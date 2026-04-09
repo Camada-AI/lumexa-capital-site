@@ -348,6 +348,39 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 .fi:valid:not(:placeholder-shown){border-color:rgba(201,168,76,.25);}
 .fi:focus:invalid{border-color:rgba(255,80,80,.5);}
 .fsub:disabled{opacity:.5;cursor:not-allowed;}
+
+/* ─── FAQ ─── */
+.faq{margin-top:32px;border-top:1px solid var(--w15);padding-top:28px;}
+.faq-title{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--w50);margin-bottom:16px;}
+.faq-item{margin-bottom:0;border-bottom:1px solid var(--w08);}
+.faq-q{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:14px 0;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:var(--w70);display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s;}
+.faq-q:hover{color:var(--white);}
+.faq-q-icon{font-size:16px;color:var(--gold);flex-shrink:0;transition:transform .25s;}
+.faq-q.open .faq-q-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-a.open{max-height:200px;}
+.faq-a-inner{font-size:13px;font-weight:300;color:var(--w65);line-height:1.75;padding-bottom:14px;}
+
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;display:flex;flex-direction:column;align-items:flex-end;gap:10px;}
+.wa-btn{width:54px;height:54px;border-radius:50%;background:#25D366;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:transform .2s;}
+.wa-btn:hover{transform:scale(1.08);}
+.wa-modal{background:var(--midnight);border:1px solid var(--w15);border-radius:12px;padding:24px;width:280px;display:none;flex-direction:column;gap:14px;box-shadow:0 8px 32px rgba(0,0,0,.4);}
+.wa-modal.open{display:flex;}
+.wa-modal-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--white);}
+.wa-modal-sub{font-size:12px;color:var(--w50);line-height:1.6;margin-top:-6px;}
+.wa-field{display:flex;flex-direction:column;gap:4px;}
+.wa-label{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--w50);}
+.wa-input{background:var(--w04);border:1px solid var(--w15);padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--white);outline:none;border-radius:4px;transition:border-color .2s;}
+.wa-input:focus{border-color:rgba(37,211,102,.5);}
+.wa-input::placeholder{color:var(--w30);}
+.wa-select{width:100%;background:var(--w04);border:1px solid var(--w15);padding:9px 12px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--white);outline:none;border-radius:4px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,.3)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;}
+.wa-select option{background:var(--deep);}
+.wa-submit{background:#25D366;color:#fff;border:none;padding:11px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;}
+.wa-submit:hover{background:#1fb857;}
+.wa-close{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--w30);font-size:16px;cursor:pointer;padding:4px;}
+.wa-close:hover{color:var(--white);}
+@media(max-width:768px){.wa-float{bottom:20px;right:16px;}.wa-modal{width:calc(100vw - 32px);}}
 </style>
 </head>
 <body>
@@ -731,7 +764,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
     <div>
       <span class="sec-eyebrow" data-i18n="apply.eyebrow">Candidatura</span>
       <h2 class="sec-title"><span data-i18n="apply.title1">Ciclo de investimento</span> <em>2026.</em></h2>
-      <p class="sec-lead" data-i18n="apply.body">A Lumexa Capital está avaliando médicos para o ciclo de investimento 2026. Candidaturas abertas para um número seletivo de parceiros por ciclo.</p>
+      <p class="sec-lead" data-i18n="apply.body">A Lumexa Capital está avaliando médicos para o ciclo de investimento 2026. Avaliamos parceiros em todo o Brasil — e médicos brasileiros residentes no exterior.</p>
       <div class="apply-notes">
         <div class="apply-note-item"><div class="apply-note-line"></div><span data-i18n="apply.n1">Avaliação pelo comitê sem custo e sem compromisso.</span></div>
         <div class="apply-note-item"><div class="apply-note-line"></div><span data-i18n="apply.n2">Toda candidatura passa por due diligence antes de qualquer proposta.</span></div>
@@ -760,6 +793,9 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
             <option data-i18n="spec.oculo">Oculoplástica</option>
             <option data-i18n="spec.derma">Dermatologia</option>
             <option data-i18n="spec.estetica">Medicina Estética</option>
+            <option data-i18n="spec.rino">Rinoplastia</option>
+            <option data-i18n="spec.capilar">Implante Capilar</option>
+            <option data-i18n="spec.gine">Ginecologia Estética</option>
             <option data-i18n="spec.other">Outra</option>
           </select>
         </div>
@@ -817,6 +853,30 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
         <button type="submit" class="fsub" data-i18n="form.submit">Enviar candidatura</button>
         <p class="fdisclaim" data-i18n="form.disclaim">Suas informações são tratadas com sigilo absoluto. Nosso comitê entrará em contato por e-mail com os próximos passos.</p>
         </form>
+    <div class="faq">
+      <div class="faq-title">Perguntas frequentes</div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Como vocês se diferenciam de uma consultoria de marketing?
+          <span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Consultorias entregam recomendações. Nós executamos. Entramos como sócios operacionais — com capital, estrutura e equipe dedicada. Nosso resultado depende do seu.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          O que a Lumexa Capital leva em troca da parceria?
+          <span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Participamos do crescimento gerado pela parceria — não do faturamento atual. Estruturamos cada deal de forma customizada, discutida em proposta formal após o processo de avaliação.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Vocês atendem fora de São Paulo?
+          <span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Sim. Avaliamos parceiros em todo o Brasil e médicos brasileiros residentes no exterior. Nossa operação não exige presença física em SP.</div></div>
+      </div>
+    </div>
       </div>
       <div class="form-success" id="formSuccess">
         <div class="success-rule"></div>
@@ -914,12 +974,12 @@ pt:{
 'careers.cta':'Ver vaga','careers.note':'Não encontrou a vaga certa? Envie seu perfil para <a href="mailto:time@lumexacapital.com">time@lumexacapital.com</a>',
 'tag.hybrid':'Híbrido','tag.remote':'Remoto','tag.onsite':'Presencial',
 'apply.eyebrow':'Candidatura','apply.title1':'Ciclo de investimento',
-'apply.body':'A Lumexa Capital está avaliando médicos para o ciclo de investimento 2026. Candidaturas abertas para um número seletivo de parceiros por ciclo.',
+'apply.body':'A Lumexa Capital está avaliando médicos para o ciclo de investimento 2026. Avaliamos parceiros em todo o Brasil — e médicos brasileiros residentes no exterior.',
 'apply.n1':'Avaliação pelo comitê sem custo e sem compromisso.','apply.n2':'Toda candidatura passa por due diligence antes de qualquer proposta.','apply.n3':'Confidencialidade garantida em todas as etapas.','apply.n4':'Número seletivo de parceiros aprovados por ciclo.',
 'form.label':'Formulário de candidatura','form.title':'Comitê de Investimento · 2026',
 'form.name':'Nome completo','form.namePh':'Dr. João Silva','form.crm':'CRM',
 'form.specialty':'Especialidade','form.select':'Selecione',
-'spec.plastica':'Cirurgia Plástica','spec.oculo':'Oculoplástica','spec.derma':'Dermatologia','spec.estetica':'Medicina Estética','spec.other':'Outra',
+'spec.plastica':'Cirurgia Plástica','spec.oculo':'Oculoplástica','spec.derma':'Dermatologia','spec.estetica':'Medicina Estética','spec.rino':'Rinoplastia','spec.capilar':'Implante Capilar','spec.gine':'Ginecologia Estética','spec.other':'Outra',
 'form.revenue':'Faturamento mensal','form.above5m':'Acima de R$5M',
 'form.location':'Estado / País','form.otherOpt':'Outro país',
 'form.email':'E-mail profissional','form.emailPh':'dr.joao@email.com',
@@ -990,12 +1050,12 @@ en:{
 'careers.cta':'View position','careers.note':'Did not find the right role? Send your profile to <a href="mailto:time@lumexacapital.com">time@lumexacapital.com</a>',
 'tag.hybrid':'Hybrid','tag.remote':'Remote','tag.onsite':'On-site',
 'apply.eyebrow':'Application','apply.title1':'Investment cycle',
-'apply.body':'Lumexa Capital is evaluating physicians for the 2026 investment cycle. Applications open for a selective number of partners per cycle.',
+'apply.body':'Lumexa Capital is evaluating physicians for the 2026 investment cycle. We evaluate partners across Brazil — and Brazilian physicians based abroad.',
 'apply.n1':'Committee evaluation at no cost and no commitment.','apply.n2':'Every application undergoes professional due diligence before any proposal.','apply.n3':'Confidentiality guaranteed at every stage.','apply.n4':'Selective number of partners approved per cycle.',
 'form.label':'Application form','form.title':'Investment Committee · 2026',
 'form.name':'Full name','form.namePh':'Dr. John Smith','form.crm':'Medical License',
 'form.specialty':'Specialty','form.select':'Select',
-'spec.plastica':'Plastic Surgery','spec.oculo':'Oculoplastics','spec.derma':'Dermatology','spec.estetica':'Aesthetic Medicine','spec.other':'Other',
+'spec.plastica':'Plastic Surgery','spec.oculo':'Oculoplastics','spec.derma':'Dermatology','spec.estetica':'Aesthetic Medicine','spec.rino':'Rhinoplasty','spec.capilar':'Hair Transplant','spec.gine':'Aesthetic Gynecology','spec.other':'Other',
 'form.revenue':'Monthly revenue','form.above5m':'Above R$5M',
 'form.location':'State / Country','form.otherOpt':'Other country',
 'form.email':'Professional e-mail','form.emailPh':'dr.john@email.com',
@@ -1066,12 +1126,12 @@ es:{
 'careers.cta':'Ver posición','careers.note':'No encontró el puesto adecuado? Envíe su perfil a <a href="mailto:time@lumexacapital.com">time@lumexacapital.com</a>',
 'tag.hybrid':'Híbrido','tag.remote':'Remoto','tag.onsite':'Presencial',
 'apply.eyebrow':'Postulación','apply.title1':'Ciclo de inversión',
-'apply.body':'Lumexa Capital está evaluando médicos para el ciclo de inversión 2026. Postulaciones abiertas para un número selectivo de socios por ciclo.',
+'apply.body':'Lumexa Capital está evaluando médicos para el ciclo de inversión 2026. Evaluamos socios en todo Brasil — y médicos brasileños residentes en el exterior.',
 'apply.n1':'Evaluación por el comité sin costo ni compromiso.','apply.n2':'Toda postulación pasa por due diligence antes de cualquier propuesta.','apply.n3':'Confidencialidad garantizada en todas las etapas.','apply.n4':'Número selectivo de socios aprobados por ciclo.',
 'form.label':'Formulario de postulación','form.title':'Comité de Inversión · 2026',
 'form.name':'Nombre completo','form.namePh':'Dr. Juan García','form.crm':'Registro Médico',
 'form.specialty':'Especialidad','form.select':'Seleccionar',
-'spec.plastica':'Cirugía Plástica','spec.oculo':'Oculoplástica','spec.derma':'Dermatología','spec.estetica':'Medicina Estética','spec.other':'Otra',
+'spec.plastica':'Cirugía Plástica','spec.oculo':'Oculoplástica','spec.derma':'Dermatología','spec.estetica':'Medicina Estética','spec.rino':'Rinoplastia','spec.capilar':'Implante Capilar','spec.gine':'Ginecología Estética','spec.other':'Otra',
 'form.revenue':'Facturación mensual','form.above5m':'Más de R$5M',
 'form.location':'Estado / País','form.otherOpt':'Otro país',
 'form.email':'E-mail profesional','form.emailPh':'dr.juan@email.com',
@@ -1144,7 +1204,87 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
   document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 })();
+
+function toggleWA(){
+  const m=document.getElementById('waModal');
+  m.classList.toggle('open');
+}
+function closeWA(){
+  document.getElementById('waModal').classList.remove('open');
+}
+function sendWA(){
+  const name=document.getElementById('waName').value.trim();
+  const spec=document.getElementById('waSpec').value;
+  const phone=document.getElementById('waPhone').value.trim();
+  const insta=document.getElementById('waInsta').value.trim();
+  if(!name||!phone){alert('Por favor preencha nome e telefone.');return;}
+  const msg=encodeURIComponent(
+    'Olá! Vim pelo site da Lumexa Capital.\n\n'+
+    'Nome: '+name+'\n'+
+    'Especialidade: '+(spec||'Não informado')+'\n'+
+    'Telefone: '+phone+
+    (insta?'\nInstagram: '+insta:'')+'\n\n'+
+    'Gostaria de saber mais sobre a parceria.'
+  );
+  window.open('https://wa.me/5511999999999?text='+msg,'_blank');
+  closeWA();
+}
+document.addEventListener('click',function(e){
+  const modal=document.getElementById('waModal');
+  const btn=document.querySelector('.wa-btn');
+  if(modal.classList.contains('open')&&!modal.contains(e.target)&&e.target!==btn&&!btn.contains(e.target)){
+    closeWA();
+  }
+});
+
+function toggleFaq(btn){
+  const isOpen = btn.classList.contains('open');
+  document.querySelectorAll('.faq-q').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open');});
+  if(!isOpen){btn.classList.add('open');btn.nextElementSibling.classList.add('open');}
+}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 </script>
+
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float" id="waFloat">
+  <div class="wa-modal" id="waModal" style="position:relative;">
+    <button class="wa-close" onclick="closeWA()">✕</button>
+    <div class="wa-modal-title">Fale com a gente</div>
+    <div class="wa-modal-sub">Preencha rápido e te redirecionamos para o WhatsApp.</div>
+    <div class="wa-field">
+      <label class="wa-label">Nome completo</label>
+      <input type="text" class="wa-input" id="waName" placeholder="Dr. João Silva">
+    </div>
+    <div class="wa-field">
+      <label class="wa-label">Especialidade</label>
+      <select class="wa-select" id="waSpec">
+        <option value="">Selecione</option>
+        <option>Cirurgia Plástica</option>
+        <option>Oculoplástica</option>
+        <option>Dermatologia</option>
+        <option>Medicina Estética</option>
+        <option>Rinoplastia</option>
+        <option>Implante Capilar</option>
+        <option>Ginecologia Estética</option>
+        <option>Outra</option>
+      </select>
+    </div>
+    <div class="wa-field">
+      <label class="wa-label">WhatsApp / Telefone</label>
+      <input type="tel" class="wa-input" id="waPhone" placeholder="(11) 99999-9999">
+    </div>
+    <div class="wa-field">
+      <label class="wa-label">Instagram (opcional)</label>
+      <input type="text" class="wa-input" id="waInsta" placeholder="@dr.joao">
+    </div>
+    <button class="wa-submit" onclick="sendWA()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Ir para o WhatsApp
+    </button>
+  </div>
+  <button class="wa-btn" onclick="toggleWA()" title="Fale pelo WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </button>
+</div>
 </body>
 </html>
