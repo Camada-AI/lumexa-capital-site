@@ -133,6 +133,10 @@ h2.sec-title em{font-style:italic;color:var(--pale);}
 .tc-featured{background:linear-gradient(145deg,var(--royal) 0%,var(--cobalt) 100%);border-color:rgba(201,168,76,.18);}
 .tc-featured:hover{background:linear-gradient(145deg,rgba(13,46,90,.9) 0%,rgba(19,64,128,.9) 100%);}
 .tc-role{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.tc-photo{width:72px;height:72px;border-radius:50%;background:var(--w08);border:1px solid var(--w15);margin-bottom:16px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.tc-photo img{width:100%;height:100%;object-fit:cover;}
+.tc-photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.tc-photo-placeholder svg{opacity:.25;}
 .tc-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:12px;line-height:1.15;}
 .tc-bio{font-size:12px;font-weight:300;color:var(--w50);line-height:1.72;margin-bottom:18px;}
 .tc-tags{display:flex;flex-wrap:wrap;gap:5px;}
@@ -464,7 +468,8 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
       </div>
       <!-- Row 2: Karla + Enzo -->
       <div class="tc">
-        <div class="tc-role">Medical Partner</div>
+        <div class="tc-photo"><div class="tc-photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="white" stroke-width="1.5"/></svg></div></div>
+                <div class="tc-role">Medical Partner</div>
         <div class="tc-name">Dra. Karla Caetano Lobo</div>
         <div class="tc-bio" data-i18n="team.karla">Residência em Oftalmologia pela FUBOG. Fellow em Glaucoma no Instituto Visão de Brasília. Pós-graduação no Hospital Israelita Albert Einstein. Especialista em blefaroplastia. Medical Partner fundadora da KCL Clinic.</div>
         <div class="tc-tags">
@@ -475,7 +480,8 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
         </div>
       </div>
       <div class="tc">
-        <div class="tc-role">CTO</div>
+        <div class="tc-photo"><div class="tc-photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="white" stroke-width="1.5"/></svg></div></div>
+                <div class="tc-role">CTO</div>
         <div class="tc-name">Fabrício Schiavo</div>
         <div class="tc-bio" data-i18n="team.fabricio">École Polytechnique — Machine Learning & Entrepreneurship. Strate École de Design — Innovation Design. Co-fundador e CTO da Magroove por 5 anos. CTO da INSIDR em Paris. Fundador da Pixel Breeders, software house com 9 anos de operação. Na Lumexa Capital, lidera tecnologia e produto do Lumexa SaaS.</div>
         <div class="tc-tags">
@@ -487,7 +493,8 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
       </div>
       <!-- Row 3: Enzo -->
       <div class="tc" style="grid-column:1/-1;">
-        <div class="tc-role">Head of Product</div>
+        <div class="tc-photo"><div class="tc-photo-placeholder"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="white" stroke-width="1.5"/></svg></div></div>
+                <div class="tc-role">Head of Product</div>
         <div class="tc-name">Enzo Prezoto</div>
         <div class="tc-bio" data-i18n="team.enzo">USP Economia Empresarial e Controladoria. Aceleração presencial na University of St. Gallen — START Fellowship. Analista financeiro em startups YC — Cloud Humans (YC W21) e Fluke (YC S21). Fundador da Atalho, fintech de automação financeira com IA. Na Lumexa Capital, lidera produto do Lumexa SaaS.</div>
         <div class="tc-tags">
