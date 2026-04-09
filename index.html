@@ -2,8 +2,20 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta property="og:title" content="Lumexa Capital — O sócio operacional do médico">
+<meta property="og:description" content="O sócio que o médico precisava — mas não sabia que existia.">
+<meta property="og:url" content="https://lumexacapital.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lumexa Capital">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lumexa Capital — O sócio operacional do médico">
+<meta name="twitter:description" content="O sócio que o médico precisava — mas não sabia que existia.">
+<meta name="description" content="A Lumexa Capital investe em médicos que querem crescer sem abrir mão da medicina. Capital, estrutura e execução — sem que você deixe de ser médico.">
+<link rel="canonical" href="https://lumexacapital.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lumexa Capital</title>
+<title>Lumexa Capital — O sócio operacional do médico</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="%230D2E5A"/><text x="7" y="24" font-family="Georgia,serif" font-size="22" fill="%23C9A84C">L</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -74,27 +86,6 @@ h2.sec-title{font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,50p
 h2.sec-title em{font-style:italic;color:var(--pale);}
 .sec-lead{font-size:15px;font-weight:300;line-height:1.85;color:var(--w70);max-width:460px;margin-top:14px;}
 .divider-full{height:1px;background:linear-gradient(90deg,transparent,var(--w15) 30%,var(--w15) 70%,transparent);}
-
-/* ─── FILOSOFIA ─── */
-.filosofia{padding:var(--section-pad);background:var(--abyss);position:relative;overflow:hidden;}
-.filosofia::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 100% 50%,rgba(13,46,90,.3) 0%,transparent 55%);}
-.f-inner{position:relative;z-index:1;display:grid;grid-template-columns:340px 1fr;gap:96px;align-items:start;}
-.f-left{position:sticky;top:120px;}
-.f-blocks{display:flex;flex-direction:column;gap:0;}
-.f-block{padding:28px 0 28px 28px;border-left:1px solid var(--w08);transition:border-color .3s;}
-.f-block:hover{border-left-color:var(--gold);}
-.f-block+.f-block{border-top:1px solid var(--w04);}
-.f-block-title{font-size:13px;font-weight:500;color:var(--white);margin-bottom:8px;letter-spacing:.02em;}
-.f-block-body{font-size:14px;font-weight:300;color:var(--w65);line-height:1.85;}
-.f-result{margin-top:2px;padding:36px;background:linear-gradient(135deg,var(--royal) 0%,var(--cobalt) 100%);border:1px solid rgba(201,168,76,.15);position:relative;overflow:hidden;}
-.f-result::before{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.13) 0%,transparent 65%);}
-.f-result-label{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
-.f-result-n{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;color:var(--white);line-height:1;margin-bottom:10px;}
-.f-result-n span{color:var(--gold);}
-.f-result-desc{font-size:13px;font-weight:300;color:var(--w70);line-height:1.75;margin-bottom:20px;}
-.f-result-detail{padding-top:18px;border-top:1px solid var(--w15);display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.f-detail{font-size:11px;font-weight:300;color:var(--w65);line-height:1.6;}
-.f-detail strong{color:var(--white);font-weight:500;display:block;margin-bottom:2px;}
 
 /* ─── ABORDAGEM ─── */
 .abordagem{padding:var(--section-pad);background:linear-gradient(170deg,var(--midnight) 0%,var(--deep) 100%);position:relative;overflow:hidden;}
@@ -1195,6 +1186,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 
 // IntersectionObserver — scroll-triggered animations
 (function(){
+  if(!('IntersectionObserver' in window)){
+    document.querySelectorAll('.scroll-reveal').forEach(function(el){el.classList.add('visible');});
+    return;
+  }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
       if(el.isIntersecting){
@@ -1230,6 +1225,7 @@ async function sendWA(){
   fd.append('telefone',phone);
   fd.append('instagram',insta||'');
   fd.append('canal','WhatsApp');
+  fd.append('_language',lang||'pt');
   fd.append('_subject','Novo lead WhatsApp — Lumexa Capital');
   try{
     await fetch('https://formspree.io/f/mqegvzgj',{
