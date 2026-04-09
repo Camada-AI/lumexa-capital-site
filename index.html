@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumexa Capital</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#030B18;--midnight:#061428;--deep:#0A2040;
+  --royal:#0D2E5A;--cobalt:#134080;--blue:#1A5299;
+  --steel:#2D6DB5;--mist:#4B89CC;--pale:#8BB8E8;
+  --gold:#C9A84C;--gold-lt:#E2C97A;
+  --white:#FFFFFF;--off:#F7F5F1;
+  --w70:rgba(255,255,255,.70);--w50:rgba(255,255,255,.50);
+  --w30:rgba(255,255,255,.30);--w15:rgba(255,255,255,.15);
+  --w08:rgba(255,255,255,.08);--w04:rgba(255,255,255,.04);
+  --section-pad:128px 72px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--abyss);font-family:'DM Sans',sans-serif;color:var(--white);overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:998;opacity:.28;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.fade{opacity:0;animation:fadeUp .9s ease forwards;}
+.d1{animation-delay:.1s;}.d2{animation-delay:.28s;}.d3{animation-delay:.46s;}.d4{animation-delay:.64s;}
+.no-anim{animation:none!important;opacity:1!important;transform:none!important;}
+.lang-sw{display:flex;border:1px solid var(--w08);border-radius:1px;overflow:hidden;flex-shrink:0;}
+.lang-btn{font-size:10px;font-weight:500;letter-spacing:.1em;color:var(--w30);background:transparent;border:none;border-right:1px solid var(--w08);padding:7px 11px;cursor:pointer;transition:color .2s,background .2s;}
+.lang-btn:last-child{border-right:none;}
+.lang-btn:hover{color:var(--white);background:var(--w04);}
+.lang-btn.active{color:var(--gold);background:rgba(201,168,76,.08);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 64px;background:linear-gradient(180deg,rgba(3,11,24,.96) 0%,transparent 100%);transition:padding .3s;}
+.nav-logo{display:flex;align-items:baseline;gap:9px;text-decoration:none;flex-shrink:0;}
+.nav-l{font-family:'Playfair Display',serif;font-size:19px;font-weight:400;color:var(--white);letter-spacing:.02em;}
+.nav-c{font-family:'DM Sans',sans-serif;font-size:7px;font-weight:400;color:var(--gold);letter-spacing:.35em;text-transform:uppercase;}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{font-size:11px;color:var(--w50);letter-spacing:.06em;text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-actions{display:flex;gap:10px;align-items:center;}
+.nav-cta{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.35);padding:8px 18px;border-radius:1px;text-decoration:none;transition:background .2s,color .2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--gold);color:var(--abyss);}
+.nav-inv{font-size:10px;color:var(--w30);border:1px solid var(--w08);padding:8px 14px;border-radius:1px;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap;}
+.nav-inv:hover{color:var(--white);border-color:var(--w30);}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 72px 96px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 65% 80% at 95% 5%,rgba(20,64,128,.38) 0%,transparent 55%),radial-gradient(ellipse 55% 65% at 5% 88%,rgba(10,32,64,.55) 0%,transparent 50%),linear-gradient(155deg,var(--midnight) 0%,var(--abyss) 55%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 85% 85% at 50% 50%,black 0%,transparent 80%);}
+.hero-content{position:relative;z-index:2;max-width:860px;}
+.hero-rule{width:40px;height:1px;background:var(--gold);margin-bottom:36px;}
+.hero-eyebrow{font-size:10px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:block;}
+h1.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(48px,5.8vw,86px);font-weight:400;line-height:1.08;letter-spacing:.01em;color:var(--white);margin-bottom:28px;}
+h1.hero-h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:16px;font-weight:300;line-height:1.8;color:var(--w70);max-width:500px;margin-bottom:48px;}
+.hero-actions{display:flex;align-items:center;gap:24px;margin-bottom:72px;}
+.btn-prim{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--abyss);background:var(--gold);padding:14px 32px;border-radius:1px;text-decoration:none;transition:background .2s;display:inline-block;border:none;cursor:pointer;}
+.btn-prim:hover{background:var(--gold-lt);}
+.btn-ghost{font-size:12px;font-weight:300;color:var(--w50);text-decoration:none;letter-spacing:.06em;transition:color .2s;}
+.btn-ghost:hover{color:var(--white);}
+.scroll-indicator{position:absolute;right:64px;bottom:40px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;}
+.scroll-line{width:1px;height:44px;background:linear-gradient(180deg,transparent,var(--gold));}
+.scroll-label{font-size:9px;letter-spacing:.2em;color:var(--w30);text-transform:uppercase;writing-mode:vertical-rl;}
+.sec-eyebrow{font-size:9px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block;}
+.sec-eyebrow-pale{font-size:9px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--pale);margin-bottom:14px;display:block;}
+h2.sec-title{font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,50px);font-weight:400;line-height:1.12;color:var(--white);}
+h2.sec-title em{font-style:italic;color:var(--pale);}
+.sec-lead{font-size:15px;font-weight:300;line-height:1.8;color:var(--w70);max-width:460px;margin-top:14px;}
+.divider-full{height:1px;background:linear-gradient(90deg,transparent,var(--w15) 30%,var(--w15) 70%,transparent);}
+.filosofia{padding:var(--section-pad);background:var(--abyss);position:relative;overflow:hidden;}
+.filosofia::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 100% 50%,rgba(13,46,90,.3) 0%,transparent 55%);}
+.f-inner{position:relative;z-index:1;display:grid;grid-template-columns:340px 1fr;gap:96px;align-items:start;}
+.f-left{position:sticky;top:120px;}
+.f-blocks{display:flex;flex-direction:column;gap:0;}
+.f-block{padding:28px 0 28px 28px;border-left:1px solid var(--w08);transition:border-color .3s;}
+.f-block:hover{border-left-color:var(--gold);}
+.f-block+.f-block{border-top:1px solid var(--w04);}
+.f-block-title{font-size:13px;font-weight:500;color:var(--white);margin-bottom:8px;letter-spacing:.02em;}
+.f-block-body{font-size:14px;font-weight:300;color:var(--w60, rgba(255,255,255,.6));line-height:1.82;}
+.f-result{margin-top:2px;padding:36px;background:linear-gradient(135deg,var(--royal) 0%,var(--cobalt) 100%);border:1px solid rgba(201,168,76,.15);position:relative;overflow:hidden;}
+.f-result::before{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.13) 0%,transparent 65%);}
+.f-result-label{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.f-result-n{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;color:var(--white);line-height:1;margin-bottom:10px;}
+.f-result-n span{color:var(--gold);}
+.f-result-desc{font-size:13px;font-weight:300;color:var(--w70);line-height:1.72;margin-bottom:20px;}
+.f-result-detail{padding-top:18px;border-top:1px solid var(--w15);display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.f-detail{font-size:11px;font-weight:300;color:var(--w50);line-height:1.6;}
+.f-detail strong{color:var(--white);font-weight:500;display:block;margin-bottom:2px;}
+.abordagem{padding:var(--section-pad);background:linear-gradient(170deg,var(--midnight) 0%,var(--deep) 100%);position:relative;overflow:hidden;}
+.abordagem::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 0% 55%,rgba(26,82,153,.18) 0%,transparent 55%);}
+.a-inner{position:relative;z-index:1;}
+.a-header{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:56px;}
+.a-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--w04);}
+.a-card{padding:40px 32px;background:var(--midnight);transition:background .3s;}
+.a-card:hover{background:rgba(13,46,90,.7);}
+.a-card-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;line-height:1;color:rgba(201,168,76,.1);margin-bottom:20px;}
+.a-card-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:10px;}
+.a-card-body{font-size:13px;font-weight:300;color:var(--w50);line-height:1.75;}
+.dd{padding:var(--section-pad);background:var(--abyss);position:relative;overflow:hidden;}
+.dd::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 100% 25%,rgba(26,82,153,.18) 0%,transparent 55%),radial-gradient(ellipse 35% 50% at 0% 85%,rgba(13,46,90,.35) 0%,transparent 50%);}
+.dd-inner{position:relative;z-index:1;}
+.dd-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:56px;}
+.dd-statement{font-size:15px;font-weight:300;color:var(--w70);line-height:1.82;border-left:2px solid var(--pale);padding-left:24px;}
+.dd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(75,137,204,.1);margin-bottom:1px;}
+.dd-pillar{padding:36px 32px;background:linear-gradient(145deg,var(--deep) 0%,rgba(13,46,90,.8) 100%);border:1px solid rgba(75,137,204,.12);}
+.dd-p-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--pale);margin-bottom:12px;}
+.dd-p-title{font-size:14px;font-weight:500;color:var(--white);margin-bottom:10px;}
+.dd-p-body{font-size:12px;font-weight:300;color:var(--w50);line-height:1.72;}
+.dd-note{padding:24px 32px;background:rgba(75,137,204,.05);border:1px solid rgba(75,137,204,.12);border-top:none;font-size:12px;font-weight:300;color:var(--w50);line-height:1.75;}
+.dd-note strong{color:var(--pale);font-weight:500;}
+.team{padding:var(--section-pad);background:linear-gradient(170deg,var(--midnight) 0%,var(--deep) 100%);position:relative;overflow:hidden;}
+.team::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 45% at 50% 0%,rgba(45,109,181,.12) 0%,transparent 55%);}
+.team-inner{position:relative;z-index:1;}
+.team-header{margin-bottom:56px;}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:2px;}
+.tc{padding:36px 32px;background:var(--w04);border:1px solid var(--w08);transition:background .3s;}
+.tc:hover{background:rgba(13,46,90,.5);}
+.tc-featured{background:linear-gradient(145deg,var(--royal) 0%,var(--cobalt) 100%);border-color:rgba(201,168,76,.18);}
+.tc-featured:hover{background:linear-gradient(145deg,rgba(13,46,90,.9) 0%,rgba(19,64,128,.9) 100%);}
+.tc-role{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.tc-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:12px;line-height:1.15;}
+.tc-bio{font-size:12px;font-weight:300;color:var(--w50);line-height:1.72;margin-bottom:18px;}
+.tc-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tc-tag{font-size:9px;letter-spacing:.07em;border:1px solid var(--w15);padding:4px 9px;border-radius:1px;color:var(--w50);}
+.investors-bar{padding:24px 32px;background:var(--w04);border:1px solid var(--w08);border-top:none;display:flex;align-items:center;gap:0;flex-wrap:wrap;}
+.inv-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--w30);margin-right:32px;white-space:nowrap;}
+.inv-item{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;color:var(--w50);padding:6px 20px;border-right:1px solid var(--w08);letter-spacing:.02em;transition:color .2s;cursor:default;}
+.inv-item:hover{color:var(--white);}
+.inv-item:last-child{border-right:none;}
+.careers{padding:var(--section-pad);background:var(--abyss);position:relative;overflow:hidden;}
+.careers::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 100% 20%,rgba(13,46,90,.3) 0%,transparent 55%);}
+.careers-inner{position:relative;z-index:1;}
+.careers-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:48px;}
+.careers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
+.cj:last-child{grid-column:1/-1;}
+.cj{padding:32px 28px;background:var(--w04);border:1px solid var(--w08);display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:background .3s,border-color .3s;cursor:pointer;}
+.cj:hover{background:rgba(13,46,90,.4);border-color:rgba(45,109,181,.2);}
+.cj-area{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.cj-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--white);margin-bottom:8px;}
+.cj-body{font-size:12px;font-weight:300;color:var(--w50);line-height:1.7;}
+.cj-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;}
+.cj-tag{font-size:9px;letter-spacing:.07em;border:1px solid var(--w15);padding:4px 9px;border-radius:1px;color:var(--w40);}
+.cj-foot{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--w08);}
+.cj-cta{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;}
+.careers-note{margin-top:2px;padding:16px 24px;background:var(--w04);border:1px solid var(--w08);font-size:12px;font-weight:300;color:var(--w50);line-height:1.7;}
+.careers-note a{color:var(--gold);text-decoration:none;}
+.apply{padding:var(--section-pad);background:linear-gradient(170deg,var(--midnight) 0%,var(--deep) 100%);position:relative;overflow:hidden;}
+.apply::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 65% at 100% 50%,rgba(20,64,128,.22) 0%,transparent 50%);}
+.apply-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;}
+.apply-notes{display:flex;flex-direction:column;gap:14px;margin-top:36px;}
+.apply-note-item{display:flex;align-items:flex-start;gap:14px;font-size:13px;font-weight:300;color:var(--w50);line-height:1.65;}
+.apply-note-line{width:16px;height:1px;background:var(--gold);flex-shrink:0;margin-top:9px;}
+.form-card{background:var(--abyss);border:1px solid var(--w08);padding:44px;}
+.form-card-header{margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--w08);}
+.form-card-label{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.form-card-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--white);}
+.fg{margin-bottom:16px;}
+.fl{font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--w30);margin-bottom:6px;display:block;}
+.fi{width:100%;background:var(--w04);border:1px solid var(--w08);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:var(--white);outline:none;transition:border-color .2s,background .2s;border-radius:0;}
+.fi::placeholder{color:var(--w30);}
+.fi:focus{border-color:rgba(201,168,76,.4);background:rgba(255,255,255,.03);}
+.ft{resize:vertical;min-height:88px;}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:12px;}.fs{width:100%;background:var(--w04);border:1px solid var(--w08);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:var(--white);outline:none;transition:border-color .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,.2)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-color:var(--w04);}
+.fs:focus{border-color:rgba(201,168,76,.4);}
+.fs option,.fs optgroup{background:var(--deep);}
+.fsub{width:100%;margin-top:20px;background:var(--gold);color:var(--abyss);font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;transition:background .2s;}
+.fsub:hover{background:var(--gold-lt);}
+.fdisclaim{font-size:10px;color:var(--w30);text-align:center;margin-top:12px;line-height:1.65;font-weight:300;}
+.form-success{display:none;flex-direction:column;align-items:flex-start;padding:32px 0;gap:18px;}
+.success-rule{width:28px;height:1px;background:var(--gold);}
+.success-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:400;color:var(--white);}
+.success-body{font-size:13px;color:var(--w70);line-height:1.8;font-weight:300;}
+.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(3,11,24,.92);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px;}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--deep);border:1px solid var(--w08);padding:48px;width:100%;max-width:400px;position:relative;}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--w30);font-size:16px;cursor:pointer;transition:color .2s;padding:4px 8px;}
+.modal-close:hover{color:var(--white);}
+.modal-logo{display:flex;align-items:baseline;gap:7px;margin-bottom:28px;}
+.modal-logo-l{font-family:'Playfair Display',serif;font-size:16px;font-weight:400;color:var(--white);}
+.modal-logo-c{font-family:'DM Sans',sans-serif;font-size:6px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;}
+.modal-eyebrow{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:9px;}
+.modal-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:6px;}
+.modal-sub{font-size:12px;font-weight:300;color:var(--w50);line-height:1.7;margin-bottom:28px;}
+.modal-fg{margin-bottom:13px;}
+.modal-label{font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--w30);margin-bottom:6px;display:block;}
+.modal-input{width:100%;background:rgba(0,0,0,.25);border:1px solid var(--w08);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:var(--white);outline:none;transition:border-color .2s;}
+.modal-input::placeholder{color:var(--w30);}
+.modal-input:focus{border-color:rgba(201,168,76,.4);}
+.modal-btn{width:100%;margin-top:20px;background:transparent;color:var(--gold);font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:13px;border:1px solid rgba(201,168,76,.35);cursor:pointer;transition:background .2s,color .2s;}
+.modal-btn:hover{background:var(--gold);color:var(--abyss);}
+.modal-access{font-size:10px;color:var(--w30);text-align:center;margin-top:12px;line-height:1.7;font-weight:300;}
+footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w08);display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;}
+.footer-logo{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;}
+.fl-l{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--white);}
+.fl-c{font-family:'DM Sans',sans-serif;font-size:7px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;}
+.footer-tag{font-size:12px;color:var(--w30);line-height:1.75;font-weight:300;max-width:210px;}
+.fc-h{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.fc-links{display:flex;flex-direction:column;gap:10px;}
+.fc-links a{font-size:12px;color:var(--w30);text-decoration:none;font-weight:300;transition:color .2s;}
+.fc-links a:hover{color:var(--white);}
+.fc-contact{font-size:12px;color:var(--w30);line-height:2;font-weight:300;}
+.footer-bottom{grid-column:1/-1;padding-top:24px;border-top:1px solid var(--w04);display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:10px;color:rgba(255,255,255,.14);letter-spacing:.07em;}
+.footer-inv{font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.07em;cursor:pointer;transition:color .2s;}
+.footer-inv:hover{color:var(--w50);}
+@media(max-width:1024px){
+  :root{--section-pad:100px 48px;}
+  nav{padding:18px 48px;}
+  .nav-links{display:none;}
+  .f-inner{grid-template-columns:1fr;}
+  .f-left{position:static;}
+  .a-header{grid-template-columns:1fr;}
+  .dd-intro{grid-template-columns:1fr;}
+  .careers-header{grid-template-columns:1fr;}
+  .apply-inner{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr;}
+  footer{grid-template-columns:1fr;padding:48px 32px;}
+}
+@media(max-width:768px){
+  :root{--section-pad:80px 24px;}
+  nav{padding:16px 24px;}
+  .nav-cta,.nav-inv{display:none;}
+  .hero{padding:0 24px 80px;}
+  .hero-stats{gap:28px;flex-wrap:wrap;}
+  .a-grid,.dd-grid,.careers-grid,.team-grid{grid-template-columns:1fr;}
+  .fr{grid-template-columns:1fr;}
+  .f-result-detail{grid-template-columns:1fr;}
+  .modal{padding:32px 24px;}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center;}
+  .investors-bar{flex-direction:column;align-items:flex-start;gap:10px;}
+}
+</style>
+</head>
+<body>
+<!-- MODAL -->
+<div class="modal-overlay" id="investorModal" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-logo"><span class="modal-logo-l">Lumexa</span><span class="modal-logo-c">Capital</span></div>
+    <div class="modal-eyebrow" data-i18n="modal.eyebrow">Acesso restrito</div>
+    <div class="modal-title" data-i18n="modal.title">Área do Investidor</div>
+    <div class="modal-sub" data-i18n="modal.sub">Portal exclusivo para investidores e membros do comitê da Lumexa Capital.</div>
+    <div class="modal-fg">
+      <label class="modal-label" data-i18n="modal.email">E-mail institucional</label>
+      <input type="email" class="modal-input" data-i18n-placeholder="modal.emailPh" placeholder="nome@instituicao.com">
+    </div>
+    <div class="modal-fg">
+      <label class="modal-label" data-i18n="modal.password">Senha</label>
+      <input type="password" class="modal-input" placeholder="••••••••">
+    </div>
+    <button class="modal-btn" data-i18n="modal.btn">Acessar portal</button>
+    <p class="modal-access" data-i18n="modal.access">Acesso mediante credenciais fornecidas pelo comitê.<br>Dúvidas: <span style="color:var(--gold);">parceiros@lumexacapital.com</span></p>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo"><span class="nav-l">Lumexa</span><span class="nav-c">Capital</span></a>
+  <div class="nav-links">
+    <a href="#filosofia" data-i18n="nav.philosophy">Filosofia</a>
+    <a href="#abordagem" data-i18n="nav.approach">Abordagem</a>
+    <a href="#due-diligence" data-i18n="nav.dd">Due Diligence</a>
+    <a href="#equipe" data-i18n="nav.team">Equipe</a>
+    <a href="#carreiras" data-i18n="nav.careers">Carreiras</a>
+  </div>
+  <div class="nav-actions">
+    <div class="lang-sw">
+      <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+    </div>
+    <a href="#apply" class="nav-cta" data-i18n="nav.apply">Candidatura</a>
+    <span class="nav-inv" onclick="openModal()" data-i18n="nav.investor">Área do Investidor</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-rule fade d1"></div>
+    <span class="hero-eyebrow fade d1" data-i18n="hero.eyebrow">Lumexa Capital · São Paulo</span>
+    <h1 class="hero-h1 fade d2">
+      <span data-i18n="hero.h1a">Parceiros de capital</span><br>
+      <span data-i18n="hero.h1b">para médicos</span> <em data-i18n="hero.h1c">excepcionais.</em>
+    </h1>
+    <p class="hero-sub fade d3" data-i18n="hero.sub">A Lumexa Capital investe em médicos que querem crescer sem abrir mão da medicina. Entramos como sócio operacional — com capital, estrutura e execução. Nossa seleção é rigorosa por design.</p>
+    <div class="hero-actions fade d4">
+      <a href="#filosofia" class="btn-prim" data-i18n="hero.cta1">Nossa abordagem</a>
+      <a href="#apply" class="btn-ghost" data-i18n="hero.cta2">Solicitar candidatura →</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span class="scroll-label">scroll</span>
+  </div>
+</section>
+<div class="divider-full"></div>
+
+<!-- FILOSOFIA -->
+<section class="filosofia" id="filosofia">
+  <div class="f-inner">
+    <div class="f-left">
+      <span class="sec-eyebrow" data-i18n="phil.eyebrow">Filosofia</span>
+      <h2 class="sec-title"><span data-i18n="phil.title1">Por que</span><br><em data-i18n="phil.title2">existimos.</em></h2>
+    </div>
+    <div>
+      <div class="f-blocks">
+        <div class="f-block">
+          <div class="f-block-title" data-i18n="phil.p1title">O problema</div>
+          <div class="f-block-body" data-i18n="phil.p1body">Médicos excepcionais perdem tempo, energia e clareza mental lidando com gestão, captação e operação. A clínica cresce devagar não por falta de talento médico — mas por falta de estrutura.</div>
+        </div>
+        <div class="f-block">
+          <div class="f-block-title" data-i18n="phil.p2title">Nossa tese</div>
+          <div class="f-block-body" data-i18n="phil.p2body">O médico é o ativo. A operação é nossa responsabilidade. Quando retiramos o peso da gestão do médico, ele faz o que faz de melhor — e a clínica cresce de forma estruturada e sustentável.</div>
+        </div>
+        <div class="f-block">
+          <div class="f-block-title" data-i18n="phil.p3title">O resultado</div>
+          <div class="f-block-body" data-i18n="phil.p3body">Nosso primeiro parceiro médico é a prova do modelo. Os números falam por si.</div>
+        </div>
+      </div>
+      <div class="f-result">
+        <div class="f-result-label" data-i18n="result.label">KCL Clinic · Parceiro fundador</div>
+        <div class="f-result-n"><span>5x</span> <span data-i18n="result.n">em 90 dias.</span></div>
+        <div class="f-result-desc" data-i18n="result.desc">Agenda estruturada, ticket reposicionado e 20 novas cirurgias fechadas por mês — resultado de operação, não de sorte.</div>
+        <div class="f-result-detail">
+          <div class="f-detail"><strong data-i18n="result.d1t">Agenda</strong><span data-i18n="result.d1b">Lotada em 30 dias</span></div>
+          <div class="f-detail"><strong data-i18n="result.d2t">Ticket</strong><span data-i18n="result.d2b">Reposicionado e otimizado</span></div>
+          <div class="f-detail"><strong data-i18n="result.d3t">Cirurgias</strong><span data-i18n="result.d3b">+20 fechadas/mês</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider-full"></div>
+
+<!-- ABORDAGEM -->
+<section class="abordagem" id="abordagem">
+  <div class="a-inner">
+    <div class="a-header">
+      <div>
+        <span class="sec-eyebrow" data-i18n="approach.eyebrow">Nossa abordagem</span>
+        <h2 class="sec-title"><span data-i18n="approach.title1">Como</span> <em data-i18n="approach.title2">investimos.</em></h2>
+      </div>
+      <p class="sec-lead" data-i18n="approach.lead">Três princípios que definem cada parceria — do primeiro contato ao crescimento contínuo.</p>
+    </div>
+    <div class="a-grid">
+      <div class="a-card">
+        <div class="a-card-num">I</div>
+        <div class="a-card-title" data-i18n="approach.c1title">Seletividade</div>
+        <div class="a-card-body" data-i18n="approach.c1body">Investimos em poucos médicos por ciclo. Não escalamos quantidade — escalamos qualidade. Cada parceria recebe atenção integral da nossa equipe.</div>
+      </div>
+      <div class="a-card">
+        <div class="a-card-num">II</div>
+        <div class="a-card-title" data-i18n="approach.c2title">Due Diligence</div>
+        <div class="a-card-body" data-i18n="approach.c2body">Toda candidatura passa por verificação profissional completa — registro, histórico clínico e reputação de mercado. Criterioso, confidencial e não negociável.</div>
+      </div>
+      <div class="a-card">
+        <div class="a-card-num">III</div>
+        <div class="a-card-title" data-i18n="approach.c3title">Parceria de longo prazo</div>
+        <div class="a-card-body" data-i18n="approach.c3body">Não somos prestadores de serviço. Ganhamos quando o médico ganha. Nosso modelo é construído para uma relação de 10 anos — com alinhamento total de incentivos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider-full"></div>
+
+<!-- DUE DILIGENCE -->
+<section class="dd" id="due-diligence">
+  <div class="dd-inner">
+    <div class="dd-intro">
+      <div>
+        <span class="sec-eyebrow-pale" data-i18n="dd.eyebrow">Due Diligence</span>
+        <h2 class="sec-title" data-i18n="dd.title">Um processo rigoroso.<br>Por design.</h2>
+      </div>
+      <div class="dd-statement" data-i18n="dd.statement">Conduzimos due diligence profissional em todas as candidaturas. Este é um processo padrão de comitê de investimento — criterioso, confidencial e não negociável. A seriedade do processo reflete a seriedade da parceria.</div>
+    </div>
+    <div class="dd-grid">
+      <div class="dd-pillar">
+        <div class="dd-p-label" data-i18n="dd.p1label">Pilar I</div>
+        <div class="dd-p-title" data-i18n="dd.p1title">Verificação de registro e habilitação</div>
+        <div class="dd-p-body" data-i18n="dd.p1body">Confirmação de CRM ativo e regular. Verificação de especialidade registrada e ausência de sanções ou restrições profissionais.</div>
+      </div>
+      <div class="dd-pillar">
+        <div class="dd-p-label" data-i18n="dd.p2label">Pilar II</div>
+        <div class="dd-p-title" data-i18n="dd.p2title">Histórico e trajetória profissional</div>
+        <div class="dd-p-body" data-i18n="dd.p2body">Análise de formação, especializações e vínculos institucionais. Avaliação da consistência e evolução da trajetória ao longo da carreira.</div>
+      </div>
+      <div class="dd-pillar">
+        <div class="dd-p-label" data-i18n="dd.p3label">Pilar III</div>
+        <div class="dd-p-title" data-i18n="dd.p3title">Reputação e referências de mercado</div>
+        <div class="dd-p-body" data-i18n="dd.p3body">Avaliação de reputação junto a pares médicos, pacientes e instituições de referência. Análise de presença e posicionamento quando aplicável.</div>
+      </div>
+    </div>
+    <div class="dd-note"><strong data-i18n="dd.confTitle">Confidencialidade garantida.</strong> <span data-i18n="dd.confBody">Todas as informações são tratadas com sigilo absoluto e utilizadas exclusivamente para análise interna do comitê. Nenhum dado é compartilhado com terceiros.</span></div>
+  </div>
+</section>
+<div class="divider-full"></div>
+
+<!-- TEAM -->
+<section class="team" id="equipe">
+  <div class="team-inner">
+    <div class="team-header">
+      <span class="sec-eyebrow" data-i18n="team.eyebrow">Equipe</span>
+      <h2 class="sec-title" data-i18n="team.title">Quem está do outro lado da mesa.</h2>
+    </div>
+    <div class="team-grid">
+      <div class="tc tc-featured">
+        <div class="tc-role">Partner</div>
+        <div class="tc-name">Mateus Apolinário Ribeiro</div>
+        <div class="tc-bio" data-i18n="team.mateus">Insper BBA & Economia. Private Equity no CPP Investments (+US$500B AUM) — private equity na América Latina. CFO LATAM e GM México na Farmalisto, com operações em Colômbia, México, Chile e Peru. Partner & Investor na Qori Capital e The Next Company. Traz para a Lumexa Capital o mesmo rigor institucional ao mercado médico.</div>
+        <div class="tc-tags">
+          <span class="tc-tag">CPP Investments · +US$500B AUM</span>
+          <span class="tc-tag">Qori Capital · The Next Company</span>
+          <span class="tc-tag">CFO & GM · LATAM</span>
+          <span class="tc-tag">Insper</span>
+        </div>
+      </div>
+      <div class="tc tc-featured">
+        <div class="tc-role">Partner · Head of Value Creation</div>
+        <div class="tc-name">Thiago Mendonça</div>
+        <div class="tc-bio" data-i18n="team.thiago">FGV-EAESP. Sócio fundador e COO da Turbi. Quase 5 anos na G4 Educação construindo áreas do zero — CS, produto e marketplace. Operador com track record de escala em early stage e empresas estabelecidas. Na Lumexa Capital, lidera value creation nas unidades e médicos parceiros.</div>
+        <div class="tc-tags">
+          <span class="tc-tag">FGV-EAESP</span>
+          <span class="tc-tag">Turbi · COO</span>
+          <span class="tc-tag">G4 Educação</span>
+          <span class="tc-tag">Value Creation</span>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="tc-role">Medical Partner</div>
+        <div class="tc-name">Dra. Karla Caetano Lobo</div>
+        <div class="tc-bio" data-i18n="team.karla">Residência em Oftalmologia pela FUBOG. Fellow em Glaucoma no Instituto Visão de Brasília. Pós-graduação no Hospital Israelita Albert Einstein. Especialista em blefaroplastia. Medical Partner fundadora da KCL Clinic.</div>
+        <div class="tc-tags">
+          <span class="tc-tag">Oftalmologia · FUBOG</span>
+          <span class="tc-tag">Fellow Glaucoma</span>
+          <span class="tc-tag">Albert Einstein</span>
+          <span class="tc-tag">KCL Clinic</span>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="tc-role">CTO</div>
+        <div class="tc-name">Fabrício Schiavo</div>
+        <div class="tc-bio" data-i18n="team.fabricio">École Polytechnique — Machine Learning & Entrepreneurship. Strate École de Design — Innovation Design. Co-fundador e CTO da Magroove por 5 anos. CTO da INSIDR em Paris. Fundador da Pixel Breeders, software house com 9 anos de operação. Na Lumexa Capital, lidera tecnologia e produto do Lumexa SaaS.</div>
+        <div class="tc-tags">
+          <span class="tc-tag">École Polytechnique</span>
+          <span class="tc-tag">Magroove · CTO</span>
+          <span class="tc-tag">Pixel Breeders</span>
+          <span class="tc-tag">ML & Design</span>
+        </div>
+      </div>
+      <div class="tc" style="grid-column:1/-1;">
+        <div class="tc-role">Head of Product</div>
+        <div class="tc-name">Enzo Prezoto</div>
+        <div class="tc-bio" data-i18n="team.enzo">USP Economia Empresarial e Controladoria. Aceleração presencial na University of St. Gallen — START Fellowship. Analista financeiro em startups YC — Cloud Humans (YC W21) e Fluke (YC S21). Fundador da Atalho, fintech de automação financeira com IA. Na Lumexa Capital, lidera produto do Lumexa SaaS.</div>
+        <div class="tc-tags">
+          <span class="tc-tag">USP</span>
+          <span class="tc-tag">St. Gallen</span>
+          <span class="tc-tag">YC Startups</span>
+          <span class="tc-tag">Lumexa SaaS</span>
+        </div>
+      </div>
+    </div>
+    <div class="investors-bar">
+      <span class="inv-label" data-i18n="team.invLabel">Investidores · Executivos seniores de</span>
+      <span class="inv-item">Goldman Sachs</span>
+      <span class="inv-item">SoftBank</span>
+      <span class="inv-item">Farallon Capital</span>
+      <span class="inv-item">Innova Capital</span>
+      <span class="inv-item">iFood</span>
+    </div>
+  </div>
+</section>
+<div class="divider-full"></div>
+
+<!-- CAREERS -->
+<section class="careers" id="carreiras">
+  <div class="careers-inner">
+    <div class="careers-header">
+      <div>
+        <span class="sec-eyebrow" data-i18n="careers.eyebrow">Carreiras</span>
+        <h2 class="sec-title"><span data-i18n="careers.title1">Construa o futuro da</span> <em data-i18n="careers.title2">medicina com a gente.</em></h2>
+      </div>
+      <p class="sec-lead" data-i18n="careers.lead">Estamos montando um time excepcional para escalar para 1.000 médicos parceiros até 2030. Buscamos pessoas que pensam como donos.</p>
+    </div>
+    <div class="careers-grid">
+      <div class="cj"><div>
+        <div class="cj-area" data-i18n="careers.j1area">Investment Team · Finance</div>
+        <div class="cj-title" data-i18n="careers.j1title">Analista de Investimentos</div>
+        <div class="cj-body" data-i18n="careers.j1body">Análise financeira de candidatos, modelagem de projeções e suporte ao comitê. Background em finanças, M&A ou PE/VC.</div>
+        <div class="cj-tags"><span class="cj-tag">São Paulo</span><span class="cj-tag">Full-time</span><span class="cj-tag" data-i18n="tag.hybrid">Híbrido</span></div>
+      </div><div class="cj-foot"><span class="cj-cta" data-i18n="careers.cta">Ver vaga</span><span>→</span></div></div>
+      <div class="cj"><div>
+        <div class="cj-area" data-i18n="careers.j2area">Technology · Product</div>
+        <div class="cj-title" data-i18n="careers.j2title">Engenheiro de Software Sênior</div>
+        <div class="cj-body" data-i18n="careers.j2body">Desenvolvimento da plataforma Lumexa SaaS. Stack moderno, problema real, impacto direto na operação clínica.</div>
+        <div class="cj-tags"><span class="cj-tag">São Paulo</span><span class="cj-tag">Full-time</span><span class="cj-tag" data-i18n="tag.remote">Remoto</span></div>
+      </div><div class="cj-foot"><span class="cj-cta" data-i18n="careers.cta">Ver vaga</span><span>→</span></div></div>
+      <div class="cj"><div>
+        <div class="cj-area" data-i18n="careers.j3area">Commercial · Value Creation</div>
+        <div class="cj-title" data-i18n="careers.j3title">Closer — Procedimentos de Alto Ticket</div>
+        <div class="cj-body" data-i18n="careers.j3body">Fechamento de procedimentos cirúrgicos e estéticos de alto valor. Perfil consultivo, capacidade de conduzir negociações complexas com pacientes e acompanhar funil do início ao fechamento.</div>
+        <div class="cj-tags"><span class="cj-tag">São Paulo</span><span class="cj-tag">Full-time</span><span class="cj-tag" data-i18n="tag.onsite">Presencial</span></div>
+      </div><div class="cj-foot"><span class="cj-cta" data-i18n="careers.cta">Ver vaga</span><span>→</span></div></div>
+      <div class="cj"><div>
+        <div class="cj-area" data-i18n="careers.j4area">Marketing</div>
+        <div class="cj-title" data-i18n="careers.j4title">Analista de Mídias Sociais</div>
+        <div class="cj-body" data-i18n="careers.j4body">Gestão e crescimento dos canais digitais das unidades médicas parceiras. Produção de conteúdo, estratégia de posicionamento e análise de performance para perfis de alto padrão.</div>
+        <div class="cj-tags"><span class="cj-tag">São Paulo</span><span class="cj-tag">Full-time</span><span class="cj-tag" data-i18n="tag.hybrid">Híbrido</span></div>
+      </div><div class="cj-foot"><span class="cj-cta" data-i18n="careers.cta">Ver vaga</span><span>→</span></div></div>
+      <div class="cj"><div>
+        <div class="cj-area" data-i18n="careers.j5area">Finance · Operations</div>
+        <div class="cj-title" data-i18n="careers.j5title">Financial Operations Analyst</div>
+        <div class="cj-body" data-i18n="careers.j5body">Gestão financeira das unidades parceiras — DRE, fluxo de caixa, conciliação e reporting. Trabalha diretamente com o Managing Partner na visibilidade financeira de cada ativo.</div>
+        <div class="cj-tags"><span class="cj-tag">São Paulo</span><span class="cj-tag">Full-time</span><span class="cj-tag" data-i18n="tag.hybrid">Híbrido</span></div>
+      </div><div class="cj-foot"><span class="cj-cta" data-i18n="careers.cta">Ver vaga</span><span>→</span></div></div>
+      <div class="cj"><div>
+        <div class="cj-area" data-i18n="careers.j6area">Revenue · Operations</div>
+        <div class="cj-title" data-i18n="careers.j6title">Revenue Operations Analyst</div>
+        <div class="cj-body" data-i18n="careers.j6body">Estruturação e otimização do funil de receita — CRM, métricas de conversão, automações e reporting comercial. Interface entre comercial, operações e produto para maximizar resultado por unidade.</div>
+        <div class="cj-tags"><span class="cj-tag">São Paulo</span><span class="cj-tag">Full-time</span><span class="cj-tag" data-i18n="tag.hybrid">Híbrido</span></div>
+      </div><div class="cj-foot"><span class="cj-cta" data-i18n="careers.cta">Ver vaga</span><span>→</span></div></div>
+      <div class="cj"><div>
+        <div class="cj-area" data-i18n="careers.j7area">Operations</div>
+        <div class="cj-title" data-i18n="careers.j7title">Gerente de Operações Clínicas</div>
+        <div class="cj-body" data-i18n="careers.j7body">Operação das unidades médicas parceiras. Interface direta com médicos. Perfil de GM com foco em resultado.</div>
+        <div class="cj-tags"><span class="cj-tag">São Paulo</span><span class="cj-tag">Full-time</span><span class="cj-tag" data-i18n="tag.onsite">Presencial</span></div>
+      </div><div class="cj-foot"><span class="cj-cta" data-i18n="careers.cta">Ver vaga</span><span>→</span></div></div>
+    </div>
+    <div class="careers-note" data-i18n="careers.note">Não encontrou a vaga certa? Envie seu perfil para <a href="mailto:time@lumexacapital.com">time@lumexacapital.com</a></div>
+  </div>
+</section>
+<div class="divider-full"></div>
+
+<!-- APPLY -->
+<section class="apply" id="apply">
+  <div class="apply-inner">
+    <div>
+      <span class="sec-eyebrow" data-i18n="apply.eyebrow">Candidatura</span>
+      <h2 class="sec-title"><span data-i18n="apply.title1">Ciclo de investimento</span> <em>2026.</em></h2>
+      <p class="sec-lead" data-i18n="apply.body">A Lumexa Capital está avaliando médicos para o ciclo de investimento 2026. Candidaturas abertas para um número seletivo de parceiros por ciclo.</p>
+      <div class="apply-notes">
+        <div class="apply-note-item"><div class="apply-note-line"></div><span data-i18n="apply.n1">Avaliação pelo comitê sem custo e sem compromisso.</span></div>
+        <div class="apply-note-item"><div class="apply-note-line"></div><span data-i18n="apply.n2">Toda candidatura passa por due diligence antes de qualquer proposta.</span></div>
+        <div class="apply-note-item"><div class="apply-note-line"></div><span data-i18n="apply.n3">Confidencialidade garantida em todas as etapas.</span></div>
+        <div class="apply-note-item"><div class="apply-note-line"></div><span data-i18n="apply.n4">Número seletivo de parceiros aprovados por ciclo.</span></div>
+      </div>
+    </div>
+    <div class="form-card">
+      <div class="form-card-header">
+        <div class="form-card-label" data-i18n="form.label">Formulário de candidatura</div>
+        <div class="form-card-title" data-i18n="form.title">Comitê de Investimento · 2026</div>
+      </div>
+      <div id="formBody">
+        <div class="fr">
+          <div class="fg"><label class="fl" data-i18n="form.name">Nome completo</label><input type="text" class="fi" data-i18n-placeholder="form.namePh" placeholder="Dr. João Silva"></div>
+          <div class="fg"><label class="fl" data-i18n="form.crm">CRM</label><input type="text" class="fi" placeholder="CRM/SP 000000"></div>
+        </div>
+        <div class="fg">
+          <label class="fl" data-i18n="form.specialty">Especialidade</label>
+          <select class="fs">
+            <option value="" disabled selected data-i18n="form.select">Selecione</option>
+            <option data-i18n="spec.plastica">Cirurgia Plástica</option>
+            <option data-i18n="spec.oculo">Ocuoplástica</option>
+            <option data-i18n="spec.derma">Dermatologia</option>
+            <option data-i18n="spec.estetica">Medicina Estética</option>
+            <option data-i18n="spec.other">Outra</option>
+          </select>
+        </div>
+        <div class="fr">
+          <div class="fg">
+            <label class="fl" data-i18n="form.revenue">Faturamento mensal</label>
+            <select class="fs">
+              <option value="" disabled selected data-i18n="form.select">Selecione</option>
+              <option>R$0 – R$40k</option><option>R$40k – R$150k</option>
+              <option>R$150k – R$400k</option><option>R$400k – R$1M</option>
+              <option>R$1M – R$5M</option><option data-i18n="form.above5m">Acima de R$5M</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label class="fl" data-i18n="form.location">Estado / País</label>
+            <select class="fs">
+              <option value="" disabled selected data-i18n="form.select">Selecione</option>
+              <optgroup label="Brasil">
+                <option>SP</option><option>RJ</option><option>MG</option><option>RS</option>
+                <option>PR</option><option>SC</option><option>BA</option><option>GO</option>
+                <option>DF</option><option>CE</option><option>PE</option><option>AM</option>
+                <option>PA</option><option>MA</option><option>ES</option><option>MT</option>
+                <option>MS</option><option>RO</option><option>TO</option><option>AL</option>
+                <option>SE</option><option>PB</option><option>RN</option><option>PI</option>
+                <option>AC</option><option>RR</option><option>AP</option>
+              </optgroup>
+              <optgroup label="América Latina">
+                <option>Argentina</option><option>Chile</option><option>Colômbia</option>
+                <option>México</option><option>Peru</option><option>Uruguai</option>
+                <option>Paraguai</option><option>Bolívia</option><option>Equador</option>
+                <option>Venezuela</option><option>Panamá</option><option>Costa Rica</option>
+                <option>Guatemala</option><option>El Salvador</option><option>Rep. Dominicana</option>
+              </optgroup>
+              <optgroup label="América do Norte">
+                <option>Estados Unidos</option><option>Canadá</option>
+              </optgroup>
+              <optgroup label="Outro">
+                <option data-i18n="form.otherOpt">Outro país</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+        <div class="fr">
+          <div class="fg"><label class="fl" data-i18n="form.email">E-mail profissional</label><input type="email" class="fi" data-i18n-placeholder="form.emailPh" placeholder="dr.joao@email.com"></div>
+          <div class="fg"><label class="fl">Instagram</label><input type="text" class="fi" placeholder="@dr.joao"></div>
+        </div>
+        <div class="fg">
+          <label class="fl" data-i18n="form.procedures">Cirurgias / procedimentos por mês</label>
+          <input type="text" class="fi" data-i18n-placeholder="form.proceduresPh" placeholder="Ex: 12 cirurgias, 80 procedimentos estéticos">
+        </div>
+        <div class="fg">
+          <label class="fl" data-i18n="form.message">Descreva seu momento atual e o que busca em um parceiro de capital</label>
+          <textarea class="fi ft"></textarea>
+        </div>
+        <button class="fsub" onclick="submitForm()" data-i18n="form.submit">Enviar candidatura</button>
+        <p class="fdisclaim" data-i18n="form.disclaim">Suas informações são tratadas com sigilo absoluto. Nosso comitê entrará em contato por e-mail com os próximos passos.</p>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="success-rule"></div>
+        <div class="success-title" data-i18n="form.successTitle">Candidatura recebida.</div>
+        <div class="success-body" data-i18n="form.successBody">Nosso comitê entrará em contato por e-mail com os próximos passos do processo de avaliação.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo"><span class="fl-l">Lumexa</span><span class="fl-c">Capital</span></div>
+    <p class="footer-tag" data-i18n="footer.tag">Parceiros de capital para médicos excepcionais.</p>
+  </div>
+  <div>
+    <div class="fc-h" data-i18n="footer.nav">Navegação</div>
+    <div class="fc-links">
+      <a href="#filosofia" data-i18n="nav.philosophy">Filosofia</a>
+      <a href="#abordagem" data-i18n="nav.approach">Abordagem</a>
+      <a href="#due-diligence" data-i18n="nav.dd">Due Diligence</a>
+      <a href="#equipe" data-i18n="nav.team">Equipe</a>
+      <a href="#carreiras" data-i18n="nav.careers">Carreiras</a>
+      <a href="#apply" data-i18n="nav.apply">Candidatura</a>
+    </div>
+  </div>
+  <div>
+    <div class="fc-h" data-i18n="footer.contact">Contato</div>
+    <div class="fc-contact">parceiros@lumexacapital.com<br>São Paulo, Brasil<br>lumexacapital.com</div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Lumexa Capital</span>
+    <span class="footer-inv" onclick="openModal()" data-i18n="nav.investor">Área do Investidor</span>
+  </div>
+</footer>
+
+<script>
+const T={
+pt:{
+'nav.philosophy':'Filosofia','nav.approach':'Abordagem','nav.dd':'Due Diligence','nav.team':'Equipe','nav.careers':'Carreiras','nav.apply':'Candidatura','nav.investor':'Área do Investidor',
+'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'Parceiros de capital','hero.h1b':'para médicos','hero.h1c':'excepcionais.',
+'hero.sub':'A Lumexa Capital investe em médicos que querem crescer sem abrir mão da medicina. Entramos como sócio operacional — com capital, estrutura e execução. Nossa seleção é rigorosa por design.',
+'hero.cta1':'Nossa abordagem','hero.cta2':'Solicitar candidatura →',
+'stat.1':'em 90 dias · KCL Clinic','stat.2':'cirurgias fechadas/mês','stat.3':'médicos parceiros · meta 2030',
+'phil.eyebrow':'Filosofia','phil.title1':'Por que','phil.title2':'existimos.',
+'phil.p1title':'O problema','phil.p1body':'Médicos excepcionais perdem tempo, energia e clareza mental lidando com gestão, captação e operação. A clínica cresce devagar não por falta de talento médico — mas por falta de estrutura.',
+'phil.p2title':'Nossa tese','phil.p2body':'O médico é o ativo. A operação é nossa responsabilidade. Quando retiramos o peso da gestão do médico, ele faz o que faz de melhor — e a clínica cresce de forma estruturada e sustentável.',
+'phil.p3title':'O resultado','phil.p3body':'Nosso primeiro parceiro médico é a prova do modelo. Os números falam por si.',
+'result.label':'KCL Clinic · Parceiro fundador','result.n':'em 90 dias.',
+'result.desc':'Agenda estruturada, ticket reposicionado e 20 novas cirurgias fechadas por mês — resultado de operação, não de sorte.',
+'result.d1t':'Agenda','result.d1b':'Lotada em 30 dias','result.d2t':'Ticket','result.d2b':'Reposicionado e otimizado','result.d3t':'Cirurgias','result.d3b':'+20 fechadas/mês',
+'approach.eyebrow':'Nossa abordagem','approach.title1':'Como','approach.title2':'investimos.',
+'approach.lead':'Três princípios que definem cada parceria — do primeiro contato ao crescimento contínuo.',
+'approach.c1title':'Seletividade','approach.c1body':'Investimos em poucos médicos por ciclo. Não escalamos quantidade — escalamos qualidade. Cada parceria recebe atenção integral da nossa equipe.',
+'approach.c2title':'Due Diligence','approach.c2body':'Toda candidatura passa por verificação profissional completa — registro, histórico clínico e reputação de mercado. Criterioso, confidencial e não negociável.',
+'approach.c3title':'Parceria de longo prazo','approach.c3body':'Não somos prestadores de serviço. Ganhamos quando o médico ganha. Nosso modelo é construído para uma relação de 10 anos — com alinhamento total de incentivos.',
+'dd.eyebrow':'Due Diligence','dd.title':'Um processo rigoroso.<br>Por design.',
+'dd.statement':'Conduzimos due diligence profissional em todas as candidaturas. Este é um processo padrão de comitê de investimento — criterioso, confidencial e não negociável.',
+'dd.p1label':'Pilar I','dd.p1title':'Verificação de registro e habilitação','dd.p1body':'Confirmação de CRM ativo e regular. Verificação de especialidade registrada e ausência de sanções profissionais.',
+'dd.p2label':'Pilar II','dd.p2title':'Histórico e trajetória profissional','dd.p2body':'Análise de formação, especializações e vínculos institucionais. Avaliação da consistência da trajetória ao longo da carreira.',
+'dd.p3label':'Pilar III','dd.p3title':'Reputação e referências de mercado','dd.p3body':'Avaliação de reputação junto a pares médicos, pacientes e instituições. Análise de presença e posicionamento quando aplicável.',
+'dd.confTitle':'Confidencialidade garantida.','dd.confBody':'Todas as informações são tratadas com sigilo absoluto e utilizadas exclusivamente para análise interna do comitê. Nenhum dado é compartilhado com terceiros.',
+'team.eyebrow':'Equipe','team.title':'Quem está do outro lado da mesa.',
+'team.mateus':'Insper BBA & Economia. Private Equity no CPP Investments (+US$500B AUM) — private equity na América Latina. CFO LATAM e GM México na Farmalisto, com operações em Colômbia, México, Chile e Peru. Partner & Investor na Qori Capital e The Next Company. Traz para a Lumexa Capital o mesmo rigor institucional ao mercado médico.',
+'team.thiago':'FGV-EAESP. Sócio fundador e COO da Turbi. Quase 5 anos na G4 Educação construindo áreas do zero — CS, produto e marketplace. Operador com track record de escala em early stage e empresas estabelecidas. Na Lumexa Capital, lidera value creation nas unidades e médicos parceiros.',
+'team.karla':'Residência em Oftalmologia pela FUBOG. Fellow em Glaucoma no Instituto Visão de Brasília. Pós-graduação no Hospital Israelita Albert Einstein. Especialista em blefaroplastia. Medical Partner fundadora da KCL Clinic.',
+'team.fabricio':'École Polytechnique — Machine Learning & Entrepreneurship. Strate École de Design — Innovation Design. Co-fundador e CTO da Magroove por 5 anos. CTO da INSIDR em Paris. Fundador da Pixel Breeders, software house com 9 anos de operação. Na Lumexa Capital, lidera tecnologia e produto do Lumexa SaaS.',
+'team.enzo':'USP Economia Empresarial e Controladoria. Aceleração presencial na University of St. Gallen — START Fellowship. Analista financeiro em startups YC — Cloud Humans (YC W21) e Fluke (YC S21). Fundador da Atalho, fintech de automação financeira com IA. Na Lumexa Capital, lidera produto do Lumexa SaaS.',
+'team.invLabel':'Investidores · Executivos seniores de',
+'careers.eyebrow':'Carreiras','careers.title1':'Construa o futuro da','careers.title2':'medicina com a gente.',
+'careers.lead':'Estamos montando um time excepcional para escalar o modelo Lumexa Capital. Buscamos pessoas que pensam como donos.',
+'careers.j1area':'Investment Team · Finance','careers.j1title':'Analista de Investimentos','careers.j1body':'Análise financeira de candidatos, modelagem de projeções e suporte ao comitê. Background em finanças, M&A ou PE/VC.',
+'careers.j2area':'Technology · Product','careers.j2title':'Engenheiro de Software Sênior','careers.j2body':'Desenvolvimento da plataforma Lumexa SaaS. Stack moderno, problema real, impacto direto na operação clínica.',
+'careers.j3area':'Commercial · Value Creation','careers.j3title':'Closer — Procedimentos de Alto Ticket','careers.j3body':'Fechamento de procedimentos cirúrgicos e estéticos de alto valor. Perfil consultivo, condução de negociações complexas e acompanhamento do funil do início ao fechamento.',
+'careers.j4area':'Marketing','careers.j4title':'Analista de Mídias Sociais','careers.j4body':'Gestão e crescimento dos canais digitais das unidades parceiras. Produção de conteúdo, estratégia de posicionamento e análise de performance para perfis de alto padrão.',
+'careers.j5area':'Finance · Operations','careers.j5title':'Financial Operations Analyst','careers.j5body':'Gestão financeira das unidades parceiras — DRE, fluxo de caixa, conciliação e reporting. Visibilidade financeira de cada ativo em parceria direta com o time de investimentos.',
+'careers.j6area':'Revenue · Operations','careers.j6title':'Revenue Operations Analyst','careers.j6body':'Estruturação e otimização do funil de receita — CRM, métricas de conversão, automações e reporting comercial. Interface entre comercial, operações e produto.',
+'careers.j7area':'Operations','careers.j7title':'Gerente de Operações Clínicas','careers.j7body':'Operação das unidades médicas parceiras. Interface direta com médicos. Perfil de GM com foco em resultado.',
+'careers.cta':'Ver vaga','careers.note':'Não encontrou a vaga certa? Envie seu perfil para <a href="mailto:time@lumexacapital.com">time@lumexacapital.com</a>',
+'tag.hybrid':'Híbrido','tag.remote':'Remoto','tag.onsite':'Presencial',
+'apply.eyebrow':'Candidatura','apply.title1':'Ciclo de investimento',
+'apply.body':'A Lumexa Capital está avaliando médicos para o ciclo de investimento 2026. Candidaturas abertas para um número seletivo de parceiros por ciclo.',
+'apply.n1':'Avaliação pelo comitê sem custo e sem compromisso.','apply.n2':'Toda candidatura passa por due diligence antes de qualquer proposta.','apply.n3':'Confidencialidade garantida em todas as etapas.','apply.n4':'Número seletivo de parceiros aprovados por ciclo.',
+'form.label':'Formulário de candidatura','form.title':'Comitê de Investimento · 2026',
+'form.name':'Nome completo','form.namePh':'Dr. João Silva','form.crm':'CRM',
+'form.specialty':'Especialidade','form.select':'Selecione',
+'spec.plastica':'Cirurgia Plástica','spec.oculo':'Ocuoplástica','spec.derma':'Dermatologia','spec.estetica':'Medicina Estética','spec.other':'Outra',
+'form.revenue':'Faturamento mensal','form.above5m':'Acima de R$5M',
+'form.location':'Estado / País','form.otherOpt':'Outro país',
+'form.email':'E-mail profissional','form.emailPh':'dr.joao@email.com',
+'form.procedures':'Cirurgias / procedimentos por mês','form.proceduresPh':'Ex: 12 cirurgias, 80 procedimentos estéticos',
+'form.message':'Descreva seu momento atual e o que busca em um parceiro de capital',
+'form.submit':'Enviar candidatura','form.disclaim':'Suas informações são tratadas com sigilo absoluto. Nosso comitê entrará em contato por e-mail com os próximos passos.',
+'form.successTitle':'Candidatura recebida.','form.successBody':'Nosso comitê entrará em contato por e-mail com os próximos passos do processo de avaliação.',
+'modal.eyebrow':'Acesso restrito','modal.title':'Área do Investidor','modal.sub':'Portal exclusivo para investidores e membros do comitê da Lumexa Capital.',
+'modal.email':'E-mail institucional','modal.emailPh':'nome@instituicao.com','modal.password':'Senha','modal.btn':'Acessar portal',
+'modal.access':'Acesso mediante credenciais fornecidas pelo comitê.<br>Dúvidas: <span style="color:var(--gold);">parceiros@lumexacapital.com</span>',
+'footer.tag':'Parceiros de capital para médicos excepcionais.','footer.nav':'Navegação','footer.contact':'Contato',
+},
+en:{
+'nav.philosophy':'Philosophy','nav.approach':'Approach','nav.dd':'Due Diligence','nav.team':'Team','nav.careers':'Careers','nav.apply':'Apply','nav.investor':'Investor Area',
+'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'Capital partners','hero.h1b':'for exceptional','hero.h1c':'physicians.',
+'hero.sub':'Lumexa Capital invests in physicians who want to grow without giving up medicine. We enter as operational partners — with capital, structure and execution. Our selection is rigorous by design.',
+'hero.cta1':'Our approach','hero.cta2':'Apply now →',
+'phil.eyebrow':'Philosophy','phil.title1':'Why we','phil.title2':'exist.',
+'phil.p1title':'The problem','phil.p1body':'Exceptional physicians lose time, energy and mental clarity dealing with management, patient acquisition and operations. Clinics grow slowly not from lack of medical talent — but lack of structure.',
+'phil.p2title':'Our thesis','phil.p2body':'The physician is the asset. Operations are our responsibility. When we remove the burden of management, physicians do what they do best — and the clinic grows in a structured, sustainable way.',
+'phil.p3title':'The result','phil.p3body':'Our first physician partner is the proof of model. The numbers speak for themselves.',
+'result.label':'KCL Clinic · Founding partner','result.n':'in 90 days.',
+'result.desc':'Structured schedule, repositioned ticket and 20 new surgeries closed per month — the result of operations, not luck.',
+'result.d1t':'Schedule','result.d1b':'Full in 30 days','result.d2t':'Ticket','result.d2b':'Repositioned & optimized','result.d3t':'Surgeries','result.d3b':'+20 closed/month',
+'approach.eyebrow':'Our approach','approach.title1':'How we','approach.title2':'invest.',
+'approach.lead':'Three principles that define every partnership — from first contact to continuous growth.',
+'approach.c1title':'Selectivity','approach.c1body':'We invest in few physicians per cycle. We do not scale quantity — we scale quality. Each partnership receives full attention from our team.',
+'approach.c2title':'Due Diligence','approach.c2body':'Every application goes through complete professional verification — registration, clinical history and market reputation. Rigorous, confidential and non-negotiable.',
+'approach.c3title':'Long-term partnership','approach.c3body':'We are not service providers. We win when the physician wins. Our model is built for a 10-year relationship — with full incentive alignment from day one.',
+'dd.eyebrow':'Due Diligence','dd.title':'A rigorous process.<br>By design.',
+'dd.statement':'We conduct professional due diligence on every application. This is a standard investment committee process — rigorous, confidential and non-negotiable.',
+'dd.p1label':'Pillar I','dd.p1title':'Registration & license verification','dd.p1body':'Confirmation of active medical license. Verification of registered specialty and absence of professional sanctions.',
+'dd.p2label':'Pillar II','dd.p2title':'Professional history & trajectory','dd.p2body':'Analysis of medical training, specializations and institutional affiliations. Assessment of career consistency and evolution.',
+'dd.p3label':'Pillar III','dd.p3title':'Market reputation & references','dd.p3body':'Evaluation of reputation among peers, patients and reference institutions. Analysis of market positioning when applicable.',
+'dd.confTitle':'Confidentiality guaranteed.','dd.confBody':'All information is treated with absolute confidentiality and used exclusively for internal committee analysis. No data is shared with third parties.',
+'team.eyebrow':'Team','team.title':'Who is on the other side of the table.',
+'team.invLabel':'Investors · Senior executives from',
+'careers.eyebrow':'Careers','careers.title1':'Build the future of','careers.title2':'medicine with us.',
+'careers.lead':'We are building an exceptional team to scale the Lumexa Capital model. We look for people who think like owners.',
+'careers.cta':'View position','careers.note':'Did not find the right role? Send your profile to <a href="mailto:time@lumexacapital.com">time@lumexacapital.com</a>',
+'tag.hybrid':'Hybrid','tag.remote':'Remote','tag.onsite':'On-site',
+'apply.eyebrow':'Application','apply.title1':'Investment cycle',
+'apply.body':'Lumexa Capital is evaluating physicians for the 2026 investment cycle. Applications open for a selective number of partners per cycle.',
+'apply.n1':'Committee evaluation at no cost and no commitment.','apply.n2':'Every application undergoes professional due diligence before any proposal.','apply.n3':'Confidentiality guaranteed at every stage.','apply.n4':'Selective number of partners approved per cycle.',
+'form.label':'Application form','form.title':'Investment Committee · 2026',
+'form.name':'Full name','form.namePh':'Dr. John Smith','form.crm':'Medical License',
+'form.specialty':'Specialty','form.select':'Select',
+'form.revenue':'Monthly revenue','form.above5m':'Above R$5M',
+'form.location':'State / Country','form.otherOpt':'Other country',
+'form.email':'Professional e-mail','form.emailPh':'dr.john@email.com',
+'form.procedures':'Surgeries / procedures per month','form.proceduresPh':'E.g.: 12 surgeries, 80 aesthetic procedures',
+'form.message':'Describe your current moment and what you look for in a capital partner',
+'form.submit':'Submit application','form.disclaim':'Your information is treated with absolute confidentiality. Our committee will contact you by e-mail with next steps.',
+'form.successTitle':'Application received.','form.successBody':'Our committee will contact you by e-mail with the next steps of the evaluation process.',
+'modal.eyebrow':'Restricted access','modal.title':'Investor Area','modal.sub':'Exclusive portal for Lumexa Capital investors and committee members.',
+'modal.email':'Institutional e-mail','modal.emailPh':'name@institution.com','modal.password':'Password','modal.btn':'Access portal',
+'modal.access':'Access requires credentials provided by the committee.<br>Questions: <span style="color:var(--gold);">parceiros@lumexacapital.com</span>',
+'footer.tag':'Capital partners for exceptional physicians.','footer.nav':'Navigation','footer.contact':'Contact',
+},
+es:{
+'nav.philosophy':'Filosofía','nav.approach':'Enfoque','nav.dd':'Due Diligence','nav.team':'Equipo','nav.careers':'Carreras','nav.apply':'Postulación','nav.investor':'Área del Inversor',
+'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'Socios de capital','hero.h1b':'para médicos','hero.h1c':'excepcionales.',
+'hero.sub':'Lumexa Capital invierte en médicos que quieren crecer sin renunciar a la medicina. Entramos como socio operacional — con capital, estructura y ejecución. Nuestra selección es rigurosa por diseño.',
+'hero.cta1':'Nuestro enfoque','hero.cta2':'Solicitar postulación →',
+'phil.eyebrow':'Filosofía','phil.title1':'Por qué','phil.title2':'existimos.',
+'phil.p1title':'El problema','phil.p1body':'Médicos excepcionales pierden tiempo, energía y claridad mental lidiando con gestión, captación y operaciones.',
+'phil.p2title':'Nuestra tesis','phil.p2body':'El médico es el activo. Las operaciones son nuestra responsabilidad.',
+'phil.p3title':'El resultado','phil.p3body':'Nuestro primer socio médico es la prueba del modelo. Los números hablan por sí solos.',
+'result.label':'KCL Clinic · Socio fundador','result.n':'en 90 días.',
+'result.desc':'Agenda estructurada, ticket reposicionado y 20 nuevas cirugías cerradas por mes.',
+'result.d1t':'Agenda','result.d1b':'Llena en 30 días','result.d2t':'Ticket','result.d2b':'Reposicionado y optimizado','result.d3t':'Cirugías','result.d3b':'+20 cerradas/mes',
+'approach.eyebrow':'Nuestro enfoque','approach.title1':'Cómo','approach.title2':'invertimos.',
+'approach.lead':'Tres principios que definen cada alianza — desde el primer contacto hasta el crecimiento continuo.',
+'approach.c1title':'Selectividad','approach.c1body':'Invertimos en pocos médicos por ciclo. No escalamos cantidad — escalamos calidad.',
+'approach.c2title':'Due Diligence','approach.c2body':'Toda postulación pasa por verificación profesional completa. Riguroso, confidencial e innegociable.',
+'approach.c3title':'Alianza de largo plazo','approach.c3body':'No somos prestadores de servicios. Ganamos cuando el médico gana.',
+'dd.eyebrow':'Due Diligence','dd.title':'Un proceso riguroso.<br>Por diseño.',
+'dd.statement':'Realizamos due diligence profesional en todas las postulaciones. Riguroso, confidencial e innegociable.',
+'dd.p1label':'Pilar I','dd.p1title':'Verificación de registro y habilitación','dd.p1body':'Confirmación de registro médico activo.',
+'dd.p2label':'Pilar II','dd.p2title':'Historial y trayectoria profesional','dd.p2body':'Análisis de formación, especializaciones y vínculos institucionales.',
+'dd.p3label':'Pilar III','dd.p3title':'Reputación y referencias de mercado','dd.p3body':'Evaluación de reputación entre pares médicos, pacientes e instituciones.',
+'dd.confTitle':'Confidencialidad garantizada.','dd.confBody':'Toda la información se trata con absoluta confidencialidad.',
+'team.eyebrow':'Equipo','team.title':'Quién está del otro lado de la mesa.',
+'team.invLabel':'Inversores · Ejecutivos seniores de',
+'careers.eyebrow':'Carreras','careers.title1':'Construye el futuro de la','careers.title2':'medicina con nosotros.',
+'careers.lead':'Estamos formando un equipo excepcional para escalar el modelo Lumexa Capital.',
+'careers.cta':'Ver posición','careers.note':'No encontró el puesto adecuado? Envíe su perfil a <a href="mailto:time@lumexacapital.com">time@lumexacapital.com</a>',
+'tag.hybrid':'Híbrido','tag.remote':'Remoto','tag.onsite':'Presencial',
+'apply.eyebrow':'Postulación','apply.title1':'Ciclo de inversión',
+'apply.body':'Lumexa Capital está evaluando médicos para el ciclo de inversión 2026.',
+'apply.n1':'Evaluación por el comité sin costo ni compromiso.','apply.n2':'Toda postulación pasa por due diligence.','apply.n3':'Confidencialidad garantizada.','apply.n4':'Número selectivo de socios aprobados por ciclo.',
+'form.label':'Formulario de postulación','form.title':'Comité de Inversión · 2026',
+'form.name':'Nombre completo','form.namePh':'Dr. Juan García','form.crm':'Registro Médico',
+'form.specialty':'Especialidad','form.select':'Seleccionar',
+'form.revenue':'Facturación mensual','form.above5m':'Más de R$5M',
+'form.location':'Estado / País','form.otherOpt':'Otro país',
+'form.email':'E-mail profesional','form.emailPh':'dr.juan@email.com',
+'form.procedures':'Cirugías / procedimientos por mes','form.proceduresPh':'Ej: 12 cirugías, 80 procedimientos estéticos',
+'form.message':'Describa su momento actual y lo que busca en un socio de capital',
+'form.submit':'Enviar postulación','form.disclaim':'Su información es tratada con absoluta confidencialidad.',
+'form.successTitle':'Postulación recibida.','form.successBody':'Nuestro comité se pondrá en contacto por e-mail.',
+'modal.eyebrow':'Acceso restringido','modal.title':'Área del Inversor','modal.sub':'Portal exclusivo para inversores y miembros del comité.',
+'modal.email':'E-mail institucional','modal.emailPh':'nombre@institucion.com','modal.password':'Contraseña','modal.btn':'Acceder al portal',
+'modal.access':'Acceso mediante credenciales proporcionadas por el comité.<br>Consultas: <span style="color:var(--gold);">parceiros@lumexacapital.com</span>',
+'footer.tag':'Socios de capital para médicos excepcionales.','footer.nav':'Navegación','footer.contact':'Contacto',
+}
+};
+
+let lang='pt';
+function setLang(l){
+  if(!T[l])return;
+  lang=l;
+  document.documentElement.lang={pt:'pt-BR',en:'en',es:'es'}[l];
+  document.querySelectorAll('.fade').forEach(e=>e.classList.add('no-anim'));
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim().toLowerCase()===l));
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    try{const v=T[l][el.getAttribute('data-i18n')];if(v===undefined)return;el.tagName==='OPTION'?el.text=v:el.innerHTML=v;}catch(e){}
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    try{const v=T[l][el.getAttribute('data-i18n-placeholder')];if(v!==undefined)el.placeholder=v;}catch(e){}
+  });
+}
+function openModal(){document.getElementById('investorModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('investorModal').classList.remove('open');document.body.style.overflow='';}
+function closeModalOutside(e){if(e.target===document.getElementById('investorModal'))closeModal();}
+function submitForm(){document.getElementById('formBody').style.display='none';const s=document.getElementById('formSuccess');s.style.display='flex';}
+</script>
+</body>
+</html>
