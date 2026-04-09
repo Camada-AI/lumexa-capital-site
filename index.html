@@ -233,6 +233,58 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 .footer-inv{font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.07em;cursor:pointer;transition:color .2s;}
 .footer-inv:hover{color:var(--w50);}
 
+
+/* ─── TESE ─── */
+.tese{padding:var(--section-pad);background:var(--abyss);position:relative;overflow:hidden;}
+.tese::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 100% 40%,rgba(13,46,90,.35) 0%,transparent 55%);}
+.tese-inner{position:relative;z-index:1;display:grid;grid-template-columns:380px 1fr;gap:96px;align-items:start;}
+.tese-left{position:sticky;top:120px;}
+.tese-statement{font-family:'Playfair Display',serif;font-size:clamp(18px,2vw,26px);font-weight:400;line-height:1.55;color:var(--white);margin-top:24px;}
+.tese-statement em{font-style:italic;color:var(--gold);}
+
+/* ─── PERFIL ─── */
+.perfil{padding:var(--section-pad);background:linear-gradient(170deg,var(--midnight) 0%,var(--deep) 100%);position:relative;overflow:hidden;}
+.perfil::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 0% 60%,rgba(26,82,153,.15) 0%,transparent 55%);}
+.perfil-inner{position:relative;z-index:1;}
+.perfil-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px;}
+.perfil-cards{display:flex;flex-direction:column;gap:2px;}
+.perfil-card{
+  display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:start;
+  padding:36px 40px;background:var(--w04);border:1px solid var(--w08);
+  transition:background .3s,border-color .3s;
+}
+.perfil-card:hover{background:rgba(13,46,90,.5);border-color:rgba(45,109,181,.25);}
+.perfil-card-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:400;color:rgba(201,168,76,.18);line-height:1;padding-top:4px;}
+.perfil-card-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:10px;}
+.perfil-card-body{font-size:14px;font-weight:300;color:var(--w70);line-height:1.82;}
+.perfil-cta{
+  margin-top:2px;padding:28px 40px;
+  background:linear-gradient(135deg,var(--royal) 0%,var(--cobalt) 100%);
+  border:1px solid rgba(201,168,76,.15);
+  display:flex;align-items:center;justify-content:space-between;gap:32px;
+}
+.perfil-cta-text{font-family:'Playfair Display',serif;font-size:clamp(16px,1.8vw,22px);font-weight:400;color:var(--white);line-height:1.4;}
+.perfil-cta-text em{font-style:italic;color:var(--gold);}
+
+/* ─── COMO AVALIAMOS (timeline) ─── */
+.avaliamos{padding:var(--section-pad);background:var(--abyss);position:relative;overflow:hidden;}
+.avaliamos::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 85% 50%,rgba(13,46,90,.3) 0%,transparent 55%);}
+.avaliamos-inner{position:relative;z-index:1;display:grid;grid-template-columns:340px 1fr;gap:96px;align-items:start;}
+.avaliamos-left{position:sticky;top:120px;}
+.timeline{display:flex;flex-direction:column;position:relative;}
+.timeline::before{content:'';position:absolute;left:19px;top:28px;bottom:28px;width:1px;background:linear-gradient(180deg,var(--gold),rgba(201,168,76,.1));}
+.tl-step{display:grid;grid-template-columns:40px 1fr;gap:24px;padding:0 0 40px 0;position:relative;}
+.tl-step:last-child{padding-bottom:0;}
+.tl-dot{width:40px;height:40px;border-radius:50%;background:var(--deep);border:1px solid var(--w15);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;transition:border-color .3s,background .3s;}
+.tl-dot-active{background:var(--royal);border-color:var(--gold);}
+.tl-dot span{font-family:'Playfair Display',serif;font-size:13px;font-weight:500;color:var(--w50);}
+.tl-dot-active span{color:var(--gold);}
+.tl-content{padding-top:8px;}
+.tl-label{font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.tl-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--white);margin-bottom:8px;}
+.tl-body{font-size:13px;font-weight:300;color:var(--w50);line-height:1.72;}
+.tl-tag{display:inline-block;margin-top:10px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--w15);padding:4px 10px;border-radius:1px;color:var(--w40);}
+
 /* ─── RESPONSIVE ─── */
 @media(max-width:1024px){
   :root{--section-pad:100px 48px;}
@@ -253,7 +305,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
   .nav-cta,.nav-inv{display:none;}
   .hero{padding:0 24px 80px;}
   .hero-stats{gap:28px;flex-wrap:wrap;}
-  .a-grid,.dd-grid,.careers-grid,.team-grid{grid-template-columns:1fr;}
+  .a-grid,.dd-grid,.careers-grid,.team-grid,.perfil-cards,.timeline{grid-template-columns:1fr;}.perfil-card{grid-template-columns:1fr;}.avaliamos-inner,.tese-inner,.perfil-header{grid-template-columns:1fr;}.tese-left,.avaliamos-left{position:static;}
   .fr{grid-template-columns:1fr;}
   .f-result-detail{grid-template-columns:1fr;}
   .modal{padding:32px 24px;}
@@ -290,8 +342,8 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
   <a href="#" class="nav-logo"><span class="nav-l">Lumexa</span><span class="nav-c">Capital</span></a>
   <div class="nav-links">
     <a href="#filosofia" data-i18n="nav.philosophy">Filosofia</a>
-    <a href="#abordagem" data-i18n="nav.approach">Abordagem</a>
-    <a href="#due-diligence" data-i18n="nav.dd">Due Diligence</a>
+    <a href="#tese" data-i18n="nav.thesis">Nossa tese</a>
+    <a href="#como-avaliamos" data-i18n="nav.process">Como avaliamos</a>
     <a href="#equipe" data-i18n="nav.team">Equipe</a>
     <a href="#carreiras" data-i18n="nav.careers">Carreiras</a>
   </div>
@@ -370,31 +422,38 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 
 <div class="divider-full"></div>
 
-<!-- ABORDAGEM -->
-<section class="abordagem" id="abordagem">
-  <div class="a-inner">
-    <div class="a-header">
-      <div>
-        <span class="sec-eyebrow" data-i18n="approach.eyebrow">Nossa abordagem</span>
-        <h2 class="sec-title"><span data-i18n="approach.title1">Como</span> <em data-i18n="approach.title2">investimos.</em></h2>
-      </div>
-      <p class="sec-lead" data-i18n="approach.lead">Três princípios que definem cada parceria — do primeiro contato ao crescimento contínuo.</p>
+<!-- TESE -->
+<section class="tese" id="tese">
+  <div class="tese-inner">
+    <div class="tese-left">
+      <span class="sec-eyebrow" data-i18n="tese.eyebrow">Nossa tese</span>
+      <h2 class="sec-title"><span data-i18n="tese.title1">Por que</span> <em data-i18n="tese.title2">investimos.</em></h2>
+      <p class="tese-statement" data-i18n="tese.statement">Investimos na premissa de que o médico extraordinário está limitado pela gestão — não pelo talento. Nossa tese é simples: <em>retire a operação do caminho e o crescimento é inevitável.</em></p>
     </div>
-    <div class="a-grid">
-      <div class="a-card">
-        <div class="a-card-num">I</div>
-        <div class="a-card-title" data-i18n="approach.c1title">Seletividade</div>
-        <div class="a-card-body" data-i18n="approach.c1body">Investimos em poucos médicos por ciclo. Não escalamos quantidade — escalamos qualidade. Cada parceria recebe atenção integral da nossa equipe.</div>
+    <div>
+      <div class="f-blocks">
+        <div class="f-block">
+          <div class="f-block-title" data-i18n="phil.p1title">O problema</div>
+          <div class="f-block-body" data-i18n="phil.p1body">Médicos excepcionais perdem tempo, energia e clareza mental lidando com gestão, captação e operação. A clínica cresce devagar não por falta de talento médico — mas por falta de estrutura.</div>
+        </div>
+        <div class="f-block">
+          <div class="f-block-title" data-i18n="phil.p2title">Nossa tese</div>
+          <div class="f-block-body" data-i18n="phil.p2body">O médico é o ativo. A operação é nossa responsabilidade. Quando retiramos o peso da gestão do médico, ele faz o que faz de melhor — e a clínica cresce de forma estruturada e sustentável.</div>
+        </div>
+        <div class="f-block">
+          <div class="f-block-title" data-i18n="phil.p3title">O resultado</div>
+          <div class="f-block-body" data-i18n="phil.p3body">Nosso primeiro parceiro médico é a prova do modelo. Os números falam por si.</div>
+        </div>
       </div>
-      <div class="a-card">
-        <div class="a-card-num">II</div>
-        <div class="a-card-title" data-i18n="approach.c2title">Due Diligence</div>
-        <div class="a-card-body" data-i18n="approach.c2body">Toda candidatura passa por verificação profissional completa — registro, histórico clínico e reputação de mercado. Criterioso, confidencial e não negociável.</div>
-      </div>
-      <div class="a-card">
-        <div class="a-card-num">III</div>
-        <div class="a-card-title" data-i18n="approach.c3title">Parceria de longo prazo</div>
-        <div class="a-card-body" data-i18n="approach.c3body">Não somos prestadores de serviço. Ganhamos quando o médico ganha. Nosso modelo é construído para uma relação de 10 anos — com alinhamento total de incentivos.</div>
+      <div class="f-result">
+        <div class="f-result-label" data-i18n="result.label">KCL Clinic · Parceiro</div>
+        <div class="f-result-n"><span>5x</span> <span data-i18n="result.n">em 90 dias.</span></div>
+        <div class="f-result-desc" data-i18n="result.desc">Agenda estruturada, ticket reposicionado e 20 novas cirurgias fechadas por mês — resultado de operação, não de sorte.</div>
+        <div class="f-result-detail">
+          <div class="f-detail"><strong data-i18n="result.d1t">Agenda</strong><span data-i18n="result.d1b">Lotada em 30 dias</span></div>
+          <div class="f-detail"><strong data-i18n="result.d2t">Ticket</strong><span data-i18n="result.d2b">Reposicionado e otimizado</span></div>
+          <div class="f-detail"><strong data-i18n="result.d3t">Cirurgias</strong><span data-i18n="result.d3b">+20 fechadas/mês</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -402,36 +461,108 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 
 <div class="divider-full"></div>
 
-<!-- DUE DILIGENCE -->
-<section class="dd" id="due-diligence">
-  <div class="dd-inner">
-    <div class="dd-intro">
+<!-- PERFIL -->
+<section class="perfil" id="perfil">
+  <div class="perfil-inner">
+    <div class="perfil-header">
       <div>
-        <span class="sec-eyebrow-pale" data-i18n="dd.eyebrow">Due Diligence</span>
-        <h2 class="sec-title" data-i18n="dd.title">Um processo rigoroso.<br>Por design.</h2>
+        <span class="sec-eyebrow" data-i18n="perfil.eyebrow">O perfil que buscamos</span>
+        <h2 class="sec-title"><span data-i18n="perfil.title1">Médicos que</span> <em data-i18n="perfil.title2">pertencem aqui.</em></h2>
       </div>
-      <div class="dd-statement" data-i18n="dd.statement">Conduzimos due diligence profissional em todas as candidaturas. Este é um processo padrão de comitê de investimento — criterioso, confidencial e não negociável. A seriedade do processo reflete a seriedade da parceria.</div>
+      <p class="sec-lead" data-i18n="perfil.lead">Não buscamos qualquer médico. Buscamos um perfil específico — e quando encontramos, investimos com convicção.</p>
     </div>
-    <div class="dd-grid">
-      <div class="dd-pillar">
-        <div class="dd-p-label" data-i18n="dd.p1label">Pilar I</div>
-        <div class="dd-p-title" data-i18n="dd.p1title">Verificação de registro e habilitação</div>
-        <div class="dd-p-body" data-i18n="dd.p1body">Confirmação de CRM ativo e regular. Verificação de especialidade registrada e ausência de sanções ou restrições profissionais.</div>
+    <div class="perfil-cards">
+      <div class="perfil-card">
+        <div class="perfil-card-num">I</div>
+        <div>
+          <div class="perfil-card-title" data-i18n="perfil.c1title">Excelência clínica reconhecida</div>
+          <div class="perfil-card-body" data-i18n="perfil.c1body">Você é referência na sua especialidade. Pacientes te procuram. Colegas te respeitam. Sua agenda cresceria naturalmente — se houvesse estrutura para absorver a demanda.</div>
+        </div>
       </div>
-      <div class="dd-pillar">
-        <div class="dd-p-label" data-i18n="dd.p2label">Pilar II</div>
-        <div class="dd-p-title" data-i18n="dd.p2title">Histórico e trajetória profissional</div>
-        <div class="dd-p-body" data-i18n="dd.p2body">Análise de formação, especializações e vínculos institucionais. Avaliação da consistência e evolução da trajetória ao longo da carreira.</div>
+      <div class="perfil-card">
+        <div class="perfil-card-num">II</div>
+        <div>
+          <div class="perfil-card-title" data-i18n="perfil.c2title">Ambição de escala, não de complexidade</div>
+          <div class="perfil-card-body" data-i18n="perfil.c2body">Você quer crescer — mas não quer se tornar gestor. Não quer contratar equipe, negociar contrato de aluguel ou entender funil de marketing. Você quer operar. Nós cuidamos do resto.</div>
+        </div>
       </div>
-      <div class="dd-pillar">
-        <div class="dd-p-label" data-i18n="dd.p3label">Pilar III</div>
-        <div class="dd-p-title" data-i18n="dd.p3title">Reputação e referências de mercado</div>
-        <div class="dd-p-body" data-i18n="dd.p3body">Avaliação de reputação junto a pares médicos, pacientes e instituições de referência. Análise de presença e posicionamento quando aplicável.</div>
+      <div class="perfil-card">
+        <div class="perfil-card-num">III</div>
+        <div>
+          <div class="perfil-card-title" data-i18n="perfil.c3title">Disposição para uma parceria real</div>
+          <div class="perfil-card-body" data-i18n="perfil.c3body">Parceria significa transparência. Significa abrir os números, alinhar expectativas e crescer junto. Se você quer um fornecedor, não somos o parceiro certo.</div>
+        </div>
       </div>
     </div>
-    <div class="dd-note"><strong data-i18n="dd.confTitle">Confidencialidade garantida.</strong> <span data-i18n="dd.confBody">Todas as informações são tratadas com sigilo absoluto e utilizadas exclusivamente para análise interna do comitê. Nenhum dado é compartilhado com terceiros.</span></div>
+    <div class="perfil-cta">
+      <div class="perfil-cta-text" data-i18n="perfil.cta">Se você se reconhece nesse perfil — <em>candidate-se ao nosso ciclo de investimento.</em></div>
+      <a href="#apply" class="btn-prim" data-i18n="nav.apply">Candidatura</a>
+    </div>
   </div>
 </section>
+
+<div class="divider-full"></div>
+
+<div class="divider-full"></div>
+
+<!-- COMO AVALIAMOS -->
+<section class="avaliamos" id="como-avaliamos">
+  <div class="avaliamos-inner">
+    <div class="avaliamos-left">
+      <span class="sec-eyebrow-pale" data-i18n="aval.eyebrow">Como avaliamos</span>
+      <h2 class="sec-title" data-i18n="aval.title">O processo de <em>investimento.</em></h2>
+      <p class="sec-lead" style="margin-top:16px;" data-i18n="aval.lead">Conduzimos cada candidatura com o mesmo rigor de um processo de investimento institucional. Cada etapa tem um propósito — e nem toda candidatura avança.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-step">
+        <div class="tl-dot tl-dot-active"><span>1</span></div>
+        <div class="tl-content">
+          <div class="tl-label" data-i18n="aval.s1label">Candidatura</div>
+          <div class="tl-title" data-i18n="aval.s1title">Formulário de aplicação</div>
+          <div class="tl-body" data-i18n="aval.s1body">Você preenche o formulário com perfil clínico, especialidade e contexto atual. Nenhum compromisso nessa etapa.</div>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot tl-dot-active"><span>2</span></div>
+        <div class="tl-content">
+          <div class="tl-label" data-i18n="aval.s2label">Time de Investimento</div>
+          <div class="tl-title" data-i18n="aval.s2title">Análise de perfil e potencial</div>
+          <div class="tl-body" data-i18n="aval.s2body">Nossa equipe de investimentos analisa o perfil, o fit com nossa tese e o potencial de crescimento da operação. É aqui que a maioria das candidaturas é filtrada.</div>
+          <span class="tl-tag" data-i18n="aval.who">Quem avalia: Time de Investimento</span>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot tl-dot-active"><span>3</span></div>
+        <div class="tl-content">
+          <div class="tl-label" data-i18n="aval.s3label">Due Diligence</div>
+          <div class="tl-title" data-i18n="aval.s3title">Verificação profissional</div>
+          <div class="tl-body" data-i18n="aval.s3body">Verificamos CRM e habilitação, analisamos trajetória clínica e avaliamos reputação no mercado. Processo padrão, criterioso e confidencial.</div>
+          <span class="tl-tag" data-i18n="aval.whoinv">Quem avalia: Time de Investimento + Due Diligence</span>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"><span>4</span></div>
+        <div class="tl-content">
+          <div class="tl-label" data-i18n="aval.s4label">Comitê de Investimento</div>
+          <div class="tl-title" data-i18n="aval.s4title">Decisão interna</div>
+          <div class="tl-body" data-i18n="aval.s4body">O comitê delibera internamente. Avalia projeção financeira, fit estratégico e alinhamento de longo prazo. A decisão é final e não negociável.</div>
+          <span class="tl-tag" data-i18n="aval.whocom">Quem delibera: Comitê de Investimento</span>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"><span>5</span></div>
+        <div class="tl-content">
+          <div class="tl-label" data-i18n="aval.s5label">Proposta formal</div>
+          <div class="tl-title" data-i18n="aval.s5title">Reunião com o Partner</div>
+          <div class="tl-body" data-i18n="aval.s5body">Apresentamos a estrutura da parceria, os termos e as expectativas de crescimento. A partir daqui, construímos juntos.</div>
+          <span class="tl-tag" data-i18n="aval.whopart">Quem apresenta: Partner</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-full"></div>
 
 <div class="divider-full"></div>
 
@@ -692,8 +823,8 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
     <div class="fc-h" data-i18n="footer.nav">Navegação</div>
     <div class="fc-links">
       <a href="#filosofia" data-i18n="nav.philosophy">Filosofia</a>
-      <a href="#abordagem" data-i18n="nav.approach">Abordagem</a>
-      <a href="#due-diligence" data-i18n="nav.dd">Due Diligence</a>
+      <a href="#tese" data-i18n="nav.thesis">Nossa tese</a>
+      <a href="#como-avaliamos" data-i18n="nav.process">Como avaliamos</a>
       <a href="#equipe" data-i18n="nav.team">Equipe</a>
       <a href="#carreiras" data-i18n="nav.careers">Carreiras</a>
       <a href="#apply" data-i18n="nav.apply">Candidatura</a>
@@ -712,7 +843,22 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const T={
 pt:{
-'nav.philosophy':'Filosofia','nav.approach':'Abordagem','nav.dd':'Due Diligence','nav.team':'Equipe','nav.careers':'Carreiras','nav.apply':'Candidatura','nav.investor':'Área do Investidor',
+'tese.eyebrow':'Nossa tese','tese.title1':'Por que','tese.title2':'investimos.',
+'tese.statement':'Investimos na premissa de que o médico extraordinário está limitado pela gestão — não pelo talento. Nossa tese é simples: retire a operação do caminho e o crescimento é inevitável.',
+'perfil.eyebrow':'O perfil que buscamos','perfil.title1':'Médicos que','perfil.title2':'pertencem aqui.',
+'perfil.lead':'Não buscamos qualquer médico. Buscamos um perfil específico — e quando encontramos, investimos com convicção.',
+'perfil.c1title':'Excelência clínica reconhecida','perfil.c1body':'Você é referência na sua especialidade. Pacientes te procuram. Colegas te respeitam. Sua agenda cresceria naturalmente — se houvesse estrutura para absorver a demanda.',
+'perfil.c2title':'Ambição de escala, não de complexidade','perfil.c2body':'Você quer crescer — mas não quer se tornar gestor. Não quer contratar equipe, negociar contrato de aluguel ou entender funil de marketing. Você quer operar. Nós cuidamos do resto.',
+'perfil.c3title':'Disposição para uma parceria real','perfil.c3body':'Parceria significa transparência. Significa abrir os números, alinhar expectativas e crescer junto. Se você quer um fornecedor, não somos o parceiro certo.',
+'perfil.cta':'Se você se reconhece nesse perfil — candidate-se ao nosso ciclo de investimento.',
+'aval.eyebrow':'Como avaliamos','aval.title':'O processo de','aval.lead':'Conduzimos cada candidatura com o mesmo rigor de um processo de investimento institucional. Cada etapa tem um propósito — e nem toda candidatura avança.',
+'aval.s1label':'Candidatura','aval.s1title':'Formulário de aplicação','aval.s1body':'Você preenche o formulário com perfil clínico, especialidade e contexto atual. Nenhum compromisso nessa etapa.',
+'aval.s2label':'Time de Investimento','aval.s2title':'Análise de perfil e potencial','aval.s2body':'Nossa equipe de investimentos analisa o perfil, o fit com nossa tese e o potencial de crescimento da operação. É aqui que a maioria das candidaturas é filtrada.',
+'aval.s3label':'Due Diligence','aval.s3title':'Verificação profissional','aval.s3body':'Verificamos CRM e habilitação, analisamos trajetória clínica e avaliamos reputação no mercado. Processo padrão, criterioso e confidencial.',
+'aval.s4label':'Comitê de Investimento','aval.s4title':'Decisão interna','aval.s4body':'O comitê delibera internamente. Avalia projeção financeira, fit estratégico e alinhamento de longo prazo. A decisão é final e não negociável.',
+'aval.s5label':'Proposta formal','aval.s5title':'Reunião com o Partner','aval.s5body':'Apresentamos a estrutura da parceria, os termos e as expectativas de crescimento. A partir daqui, construímos juntos.',
+'aval.who':'Quem avalia: Time de Investimento','aval.whoinv':'Quem avalia: Time de Investimento + Due Diligence','aval.whocom':'Quem delibera: Comitê de Investimento','aval.whopart':'Quem apresenta: Partner',
+'nav.thesis':'Nossa tese','nav.process':'Como avaliamos','nav.philosophy':'Filosofia','nav.approach':'Abordagem','nav.dd':'Due Diligence','nav.team':'Equipe','nav.careers':'Carreiras','nav.apply':'Candidatura','nav.investor':'Área do Investidor',
 'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'Parceiros de capital','hero.h1b':'para médicos','hero.h1c':'excepcionais.',
 'hero.sub':'A Lumexa Capital investe em médicos que querem crescer sem abrir mão da medicina. Entramos como sócio operacional — com capital, estrutura e execução. Nossa seleção é rigorosa por design.',
 'hero.cta1':'Nossa abordagem','hero.cta2':'Solicitar candidatura →',
@@ -773,7 +919,22 @@ pt:{
 'footer.tag':'Parceiros de capital para médicos excepcionais.','footer.nav':'Navegação','footer.contact':'Contato',
 },
 en:{
-'nav.philosophy':'Philosophy','nav.approach':'Approach','nav.dd':'Due Diligence','nav.team':'Team','nav.careers':'Careers','nav.apply':'Apply','nav.investor':'Investor Area',
+'tese.eyebrow':'Our thesis','tese.title1':'Why we','tese.title2':'invest.',
+'tese.statement':'We invest on the premise that the extraordinary physician is limited by management — not by talent. Our thesis is simple: remove operations from the way and growth becomes inevitable.',
+'perfil.eyebrow':'The profile we seek','perfil.title1':'Physicians who','perfil.title2':'belong here.',
+'perfil.lead':'We do not seek every physician. We seek a specific profile — and when we find it, we invest with conviction.',
+'perfil.c1title':'Recognized clinical excellence','perfil.c1body':'You are a reference in your specialty. Patients seek you out. Peers respect you. Your schedule would grow naturally — if there were structure to absorb the demand.',
+'perfil.c2title':'Ambition for scale, not complexity','perfil.c2body':'You want to grow — but not become a manager. You do not want to hire staff, negotiate leases or understand marketing funnels. You want to practice medicine. We handle the rest.',
+'perfil.c3title':'Willingness for a real partnership','perfil.c3body':'Partnership means transparency. It means opening the numbers, aligning expectations and growing together. If you want a vendor, we are not the right partner.',
+'perfil.cta':'If you recognize yourself in this profile — apply to our investment cycle.',
+'aval.eyebrow':'How we evaluate','aval.title':'The investment','aval.lead':'We conduct every application with the same rigor as an institutional investment process. Each stage has a purpose — and not every application advances.',
+'aval.s1label':'Application','aval.s1title':'Application form','aval.s1body':'You complete the form with your clinical profile, specialty and current context. No commitment at this stage.',
+'aval.s2label':'Investment Team','aval.s2title':'Profile and potential analysis','aval.s2body':'Our investment team analyzes the profile, the fit with our thesis and the growth potential of the operation. This is where most applications are filtered.',
+'aval.s3label':'Due Diligence','aval.s3title':'Professional verification','aval.s3body':'We verify registration and license, analyze clinical trajectory and assess market reputation. Standard process, rigorous and confidential.',
+'aval.s4label':'Investment Committee','aval.s4title':'Internal decision','aval.s4body':'The committee deliberates internally. Evaluates financial projection, strategic fit and long-term alignment. The decision is final and non-negotiable.',
+'aval.s5label':'Formal proposal','aval.s5title':'Meeting with the Partner','aval.s5body':'We present the partnership structure, terms and growth expectations. From here, we build together.',
+'aval.who':'Who evaluates: Investment Team','aval.whoinv':'Who evaluates: Investment Team + Due Diligence','aval.whocom':'Who deliberates: Investment Committee','aval.whopart':'Who presents: Partner',
+'nav.thesis':'Our thesis','nav.process':'How we evaluate','nav.philosophy':'Philosophy','nav.approach':'Approach','nav.dd':'Due Diligence','nav.team':'Team','nav.careers':'Careers','nav.apply':'Apply','nav.investor':'Investor Area',
 'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'Capital partners','hero.h1b':'for exceptional','hero.h1c':'physicians.',
 'hero.sub':'Lumexa Capital invests in physicians who want to grow without giving up medicine. We enter as operational partners — with capital, structure and execution. Our selection is rigorous by design.',
 'hero.cta1':'Our approach','hero.cta2':'Apply now →',
@@ -834,7 +995,22 @@ en:{
 'footer.tag':'Capital partners for exceptional physicians.','footer.nav':'Navigation','footer.contact':'Contact',
 },
 es:{
-'nav.philosophy':'Filosofía','nav.approach':'Enfoque','nav.dd':'Due Diligence','nav.team':'Equipo','nav.careers':'Carreras','nav.apply':'Postulación','nav.investor':'Área del Inversor',
+'tese.eyebrow':'Nuestra tesis','tese.title1':'Por qué','tese.title2':'invertimos.',
+'tese.statement':'Invertimos en la premisa de que el médico extraordinario está limitado por la gestión — no por el talento. Nuestra tesis es simple: retira la operación del camino y el crecimiento se vuelve inevitable.',
+'perfil.eyebrow':'El perfil que buscamos','perfil.title1':'Médicos que','perfil.title2':'pertenecen aquí.',
+'perfil.lead':'No buscamos cualquier médico. Buscamos un perfil específico — y cuando lo encontramos, invertimos con convicción.',
+'perfil.c1title':'Excelencia clínica reconocida','perfil.c1body':'Eres referencia en tu especialidad. Los pacientes te buscan. Los colegas te respetan. Tu agenda crecería naturalmente — si hubiera estructura para absorber la demanda.',
+'perfil.c2title':'Ambición de escala, no de complejidad','perfil.c2body':'Quieres crecer — pero no convertirte en gestor. No quieres contratar equipo, negociar arrendamientos o entender embudos de marketing. Quieres operar. Nosotros nos encargamos del resto.',
+'perfil.c3title':'Disposición para una alianza real','perfil.c3body':'Alianza significa transparencia. Significa abrir los números, alinear expectativas y crecer juntos. Si buscas un proveedor, no somos el socio adecuado.',
+'perfil.cta':'Si te reconoces en este perfil — postúlate a nuestro ciclo de inversión.',
+'aval.eyebrow':'Cómo evaluamos','aval.title':'El proceso de','aval.lead':'Conducimos cada postulación con el mismo rigor de un proceso de inversión institucional. Cada etapa tiene un propósito — y no toda postulación avanza.',
+'aval.s1label':'Postulación','aval.s1title':'Formulario de aplicación','aval.s1body':'Completas el formulario con tu perfil clínico, especialidad y contexto actual. Sin compromiso en esta etapa.',
+'aval.s2label':'Equipo de Inversiones','aval.s2title':'Análisis de perfil y potencial','aval.s2body':'Nuestro equipo de inversiones analiza el perfil, el fit con nuestra tesis y el potencial de crecimiento. Aquí se filtra la mayoría de las postulaciones.',
+'aval.s3label':'Due Diligence','aval.s3title':'Verificación profesional','aval.s3body':'Verificamos registro y habilitación, analizamos trayectoria clínica y evaluamos reputación de mercado. Proceso estándar, riguroso y confidencial.',
+'aval.s4label':'Comité de Inversión','aval.s4title':'Decisión interna','aval.s4body':'El comité delibera internamente. Evalúa proyección financiera, fit estratégico y alineación de largo plazo. La decisión es final e innegociable.',
+'aval.s5label':'Propuesta formal','aval.s5title':'Reunión con el Partner','aval.s5body':'Presentamos la estructura de la alianza, los términos y las expectativas de crecimiento. A partir de aquí, construimos juntos.',
+'aval.who':'Quién evalúa: Equipo de Inversiones','aval.whoinv':'Quién evalúa: Equipo de Inversiones + Due Diligence','aval.whocom':'Quién delibera: Comité de Inversión','aval.whopart':'Quién presenta: Partner',
+'nav.thesis':'Nuestra tesis','nav.process':'Cómo evaluamos','nav.philosophy':'Filosofía','nav.approach':'Enfoque','nav.dd':'Due Diligence','nav.team':'Equipo','nav.careers':'Carreras','nav.apply':'Postulación','nav.investor':'Área del Inversor',
 'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'Socios de capital','hero.h1b':'para médicos','hero.h1c':'excepcionales.',
 'hero.sub':'Lumexa Capital invierte en médicos que quieren crecer sin renunciar a la medicina. Entramos como socio operacional — con capital, estructura y ejecución. Nuestra selección es rigurosa por diseño.',
 'hero.cta1':'Nuestro enfoque','hero.cta2':'Solicitar postulación →',
