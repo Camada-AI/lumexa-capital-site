@@ -139,6 +139,7 @@ h2.sec-title em{font-style:italic;color:var(--pale);}
 .tc-photo-placeholder svg{opacity:.25;}
 .tc-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:12px;line-height:1.15;}
 .tc-bio{font-size:12px;font-weight:300;color:var(--w65);line-height:1.72;margin-bottom:18px;}
+.tc-bio-clamp{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
 .tc-tags{display:flex;flex-wrap:wrap;gap:5px;}
 .tc-tag{font-size:9px;letter-spacing:.07em;border:1px solid var(--w30);padding:4px 9px;border-radius:1px;color:var(--w65);}
 .investors-bar{padding:24px 32px;background:var(--w04);border:1px solid var(--w08);border-top:none;display:flex;align-items:center;gap:0;flex-wrap:wrap;}
@@ -377,10 +378,10 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
       <span data-i18n="hero.h1a">Parceiros de capital</span><br>
       <span data-i18n="hero.h1b">para médicos</span> <em data-i18n="hero.h1c">excepcionais.</em>
     </h1>
-    <p class="hero-sub fade d3" data-i18n="hero.sub">A Lumexa Capital investe em médicos que querem crescer sem abrir mão da medicina. Entramos como sócio operacional — com capital, estrutura e execução. Nossa seleção é rigorosa por design.</p>
+    <p class="hero-sub fade d3" data-i18n="hero.sub">A Lumexa Capital investe em médicos que querem crescer sem abrir mão da medicina. Entramos como sócio operacional — com capital, estrutura e execução. Crescemos juntos: nosso resultado depende do seu.</p>
     <div class="hero-actions fade d4">
-      <a href="#filosofia" class="btn-prim" data-i18n="hero.cta1">Nossa abordagem</a>
-      <a href="#apply" class="btn-ghost" data-i18n="hero.cta2">Solicitar candidatura →</a>
+      <a href="#apply" class="btn-prim" data-i18n="hero.cta2">Solicitar candidatura →</a>
+      <a href="#tese" class="btn-ghost" data-i18n="hero.cta1">Nossa abordagem</a>
     </div>
 
   </div>
@@ -594,6 +595,10 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <span class="tc-tag">CFO & GM · LATAM</span>
           <span class="tc-tag">Insper</span>
         </div>
+        <a href="https://www.linkedin.com/in/mateusribeiro3/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:10px;letter-spacing:.1em;color:var(--pale);text-decoration:none;opacity:.7;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
       </div>
       <div class="tc tc-featured">
         <div class="tc-photo"><img src="https://ui-avatars.com/api/?name=TM&background=0D2E5A&color=C9A84C&size=200&bold=true&font-size=0.4" alt="Thiago Mendonça" loading="lazy"></div>
@@ -606,13 +611,17 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <span class="tc-tag">G4 Educação</span>
           <span class="tc-tag">Value Creation</span>
         </div>
+        <a href="https://www.linkedin.com/in/thiagoazevedodemendon%C3%A7a/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:10px;letter-spacing:.1em;color:var(--pale);text-decoration:none;opacity:.7;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
       </div>
       <!-- Row 2: Karla + Enzo -->
       <div class="tc">
         <div class="tc-photo"><img src="https://ui-avatars.com/api/?name=KC&background=0D2E5A&color=C9A84C&size=200&bold=true&font-size=0.4" alt="Karla Caetano Lobo" loading="lazy"></div>
                 <div class="tc-role">Medical Partner</div>
         <div class="tc-name">Dra. Karla Caetano Lobo</div>
-        <div class="tc-bio" data-i18n="team.karla">Residência em Oftalmologia pela FUBOG. Fellow em Glaucoma no Instituto Visão de Brasília. Pós-graduação no Hospital Israelita Albert Einstein. Especialista em blefaroplastia. Medical Partner da KCL Clinic.</div>
+        <div class="tc-bio tc-bio-clamp" data-i18n="team.karla">Residência em Oftalmologia pela FUBOG. Fellow em Glaucoma no Instituto Visão de Brasília. Pós-graduação no Hospital Israelita Albert Einstein. Especialista em blefaroplastia. Medical Partner da KCL Clinic.</div>
         <div class="tc-tags">
           <span class="tc-tag">Oftalmologia · FUBOG</span>
           <span class="tc-tag">Fellow Glaucoma</span>
@@ -624,7 +633,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
         <div class="tc-photo"><img src="https://ui-avatars.com/api/?name=FS&background=0D2E5A&color=C9A84C&size=200&bold=true&font-size=0.4" alt="Fabrício Schiavo" loading="lazy"></div>
                 <div class="tc-role">CTO</div>
         <div class="tc-name">Fabrício Schiavo</div>
-        <div class="tc-bio" data-i18n="team.fabricio">École Polytechnique — Machine Learning & Entrepreneurship. Strate École de Design — Innovation Design. Co-fundador e CTO da Magroove por 5 anos. CTO da INSIDR em Paris. Fundador da Pixel Breeders, software house com 9 anos de operação. Na Lumexa Capital, lidera tecnologia e produto do Lumexa SaaS.</div>
+        <div class="tc-bio tc-bio-clamp" data-i18n="team.fabricio">École Polytechnique — Machine Learning & Entrepreneurship. Strate École de Design — Innovation Design. Co-fundador e CTO da Magroove por 5 anos. CTO da INSIDR em Paris. Fundador da Pixel Breeders, software house com 9 anos de operação. Na Lumexa Capital, lidera tecnologia e produto do Lumexa SaaS.</div>
         <div class="tc-tags">
           <span class="tc-tag">École Polytechnique</span>
           <span class="tc-tag">Magroove · CTO</span>
@@ -637,13 +646,17 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
         <div class="tc-photo"><img src="https://ui-avatars.com/api/?name=EP&background=0D2E5A&color=C9A84C&size=200&bold=true&font-size=0.4" alt="Enzo Prezoto" loading="lazy"></div>
                 <div class="tc-role">Partner · Head of Product</div>
         <div class="tc-name">Enzo Prezoto</div>
-        <div class="tc-bio" data-i18n="team.enzo">USP Economia Empresarial e Controladoria. Aceleração presencial na University of St. Gallen — START Fellowship. Analista financeiro em startups YC — Cloud Humans (YC W21) e Fluke (YC S21). Fundador da Atalho, fintech de automação financeira com IA. Na Lumexa Capital, lidera produto do Lumexa SaaS.</div>
+        <div class="tc-bio tc-bio-clamp" data-i18n="team.enzo">USP Economia Empresarial e Controladoria. Aceleração presencial na University of St. Gallen — START Fellowship. Analista financeiro em startups YC — Cloud Humans (YC W21) e Fluke (YC S21). Fundador da Atalho, fintech de automação financeira com IA. Na Lumexa Capital, lidera produto do Lumexa SaaS.</div>
         <div class="tc-tags">
           <span class="tc-tag">USP</span>
           <span class="tc-tag">St. Gallen</span>
           <span class="tc-tag">YC Startups</span>
           <span class="tc-tag">Lumexa SaaS</span>
         </div>
+        <a href="https://www.linkedin.com/in/enzoprezoto/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:10px;letter-spacing:.1em;color:var(--pale);text-decoration:none;opacity:.7;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
       </div>
     </div>
     <div class="investors-bar">
@@ -806,7 +819,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
         </div>
         <div class="fg">
           <label class="fl" data-i18n="form.message">Descreva seu momento atual e o que busca em um parceiro de capital</label>
-          <textarea class="fi ft" name="mensagem"></textarea>
+          <textarea class="fi ft" name="mensagem" placeholder="Ex: Estou com agenda quase cheia, ticket médio de R$8k por procedimento, mas sem tempo para estruturar marketing e captação. Busco parceiro que resolva a operação enquanto foco em cirurgias."></textarea>
         </div>
         <button type="submit" class="fsub" data-i18n="form.submit">Enviar candidatura</button>
         <p class="fdisclaim" data-i18n="form.disclaim">Suas informações são tratadas com sigilo absoluto. Nosso comitê entrará em contato por e-mail com os próximos passos.</p>
@@ -868,7 +881,7 @@ pt:{
 'aval.who':'Quem avalia: Time de Investimento','aval.whoinv':'Quem avalia: Time de Investimento + Due Diligence','aval.whocom':'Quem delibera: Comitê de Investimento','aval.whopart':'Quem apresenta: Partner',
 'nav.thesis':'Nossa tese','nav.process':'Como avaliamos','nav.philosophy':'Filosofia','nav.approach':'Abordagem','nav.dd':'Due Diligence','nav.team':'Equipe','nav.careers':'Carreiras','nav.apply':'Candidatura','nav.investor':'Área do Investidor',
 'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'Parceiros de capital','hero.h1b':'para médicos','hero.h1c':'excepcionais.',
-'hero.sub':'A Lumexa Capital investe em médicos que querem crescer sem abrir mão da medicina. Entramos como sócio operacional — com capital, estrutura e execução. Nossa seleção é rigorosa por design.',
+'hero.sub':'A Lumexa Capital investe em médicos que querem crescer sem abrir mão da medicina. Entramos como sócio operacional — com capital, estrutura e execução. Crescemos juntos: nosso resultado depende do seu.',
 'hero.cta1':'Nossa abordagem','hero.cta2':'Solicitar candidatura →',
 'stat.1':'em 90 dias · KCL Clinic','stat.2':'cirurgias fechadas/mês','stat.3':'médicos parceiros · meta 2030',
 'phil.eyebrow':'Filosofia','phil.title1':'Por que','phil.title2':'existimos.',
@@ -944,7 +957,7 @@ en:{
 'aval.who':'Who evaluates: Investment Team','aval.whoinv':'Who evaluates: Investment Team + Due Diligence','aval.whocom':'Who deliberates: Investment Committee','aval.whopart':'Who presents: Partner',
 'nav.thesis':'Our thesis','nav.process':'How we evaluate','nav.philosophy':'Philosophy','nav.approach':'Approach','nav.dd':'Due Diligence','nav.team':'Team','nav.careers':'Careers','nav.apply':'Apply','nav.investor':'Investor Area',
 'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'Capital partners','hero.h1b':'for exceptional','hero.h1c':'physicians.',
-'hero.sub':'Lumexa Capital invests in physicians who want to grow without giving up medicine. We enter as operational partners — with capital, structure and execution. Our selection is rigorous by design.',
+'hero.sub':'Lumexa Capital invests in physicians who want to grow without giving up medicine. We enter as operational partners — with capital, structure and execution. We grow together: our results depend on yours.',
 'hero.cta1':'Our approach','hero.cta2':'Apply now →',
 'stat.1':'in 90 days · KCL Clinic','stat.2':'surgeries closed/month','stat.3':'physician partners · target 2030',
 'phil.eyebrow':'Philosophy','phil.title1':'Why we','phil.title2':'exist.',
@@ -1020,7 +1033,7 @@ es:{
 'aval.who':'Quién evalúa: Equipo de Inversiones','aval.whoinv':'Quién evalúa: Equipo de Inversiones + Due Diligence','aval.whocom':'Quién delibera: Comité de Inversión','aval.whopart':'Quién presenta: Partner',
 'nav.thesis':'Nuestra tesis','nav.process':'Cómo evaluamos','nav.philosophy':'Filosofía','nav.approach':'Enfoque','nav.dd':'Due Diligence','nav.team':'Equipo','nav.careers':'Carreras','nav.apply':'Postulación','nav.investor':'Área del Inversor',
 'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'Socios de capital','hero.h1b':'para médicos','hero.h1c':'excepcionales.',
-'hero.sub':'Lumexa Capital invierte en médicos que quieren crecer sin renunciar a la medicina. Entramos como socio operacional — con capital, estructura y ejecución. Nuestra selección es rigurosa por diseño.',
+'hero.sub':'Lumexa Capital invierte en médicos que quieren crecer sin renunciar a la medicina. Entramos como socio operacional — con capital, estructura y ejecución. Crecemos juntos: nuestros resultados dependen de los suyos.',
 'hero.cta1':'Nuestro enfoque','hero.cta2':'Solicitar postulación →',
 'stat.1':'en 90 días · KCL Clinic','stat.2':'cirugías cerradas/mes','stat.3':'médicos socios · meta 2030',
 'phil.eyebrow':'Filosofía','phil.title1':'Por qué','phil.title2':'existimos.',
