@@ -781,6 +781,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
         <form id="candidaturaForm" action="https://formspree.io/f/xqegojkq" method="POST">
           <input type="hidden" name="_subject" value="Nova candidatura — Lumexa Capital">
           <input type="hidden" name="_language" id="formLang" value="pt">
+          <input type="hidden" name="canal" value="Formulário site">
         <div class="fr">
           <div class="fg"><label class="fl" data-i18n="form.name">Nome completo</label><input type="text" class="fi" name="nome" data-i18n-placeholder="form.namePh" placeholder="Dr. João Silva" required></div>
           <div class="fg"><label class="fl" data-i18n="form.crm">CRM</label><input type="text" class="fi" name="crm" placeholder="CRM/SP 000000"></div>
@@ -1212,12 +1213,31 @@ function toggleWA(){
 function closeWA(){
   document.getElementById('waModal').classList.remove('open');
 }
-function sendWA(){
+async function sendWA(){
   const name=document.getElementById('waName').value.trim();
   const spec=document.getElementById('waSpec').value;
   const phone=document.getElementById('waPhone').value.trim();
   const insta=document.getElementById('waInsta').value.trim();
   if(!name||!phone){alert('Por favor preencha nome e telefone.');return;}
+
+  const btn=document.querySelector('.wa-submit');
+  btn.textContent='...';btn.disabled=true;
+
+  /* POST silencioso para Formspree — captura o lead antes do WA */
+  const fd=new FormData();
+  fd.append('nome',name);
+  fd.append('especialidade',spec||'Não informado');
+  fd.append('telefone',phone);
+  fd.append('instagram',insta||'');
+  fd.append('canal','WhatsApp');
+  fd.append('_subject','Novo lead WhatsApp — Lumexa Capital');
+  try{
+    await fetch('https://formspree.io/f/xqegojkq',{
+      method:'POST',body:fd,headers:{'Accept':'application/json'}
+    });
+  }catch(e){/* falha silenciosa — não bloqueia o WA */}
+
+  /* Abre WhatsApp com mensagem pré-formatada */
   const msg=encodeURIComponent(
     'Olá! Vim pelo site da Lumexa Capital.\n\n'+
     'Nome: '+name+'\n'+
