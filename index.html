@@ -227,6 +227,25 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 .footer-inv:hover{color:var(--w50);}
 
 
+
+/* ─── F-BLOCKS (tese section) ─── */
+.f-inner{position:relative;z-index:1;display:grid;grid-template-columns:340px 1fr;gap:96px;align-items:start;}
+.f-left{position:sticky;top:120px;}
+.f-blocks{display:flex;flex-direction:column;gap:0;}
+.f-block{padding:28px 0 28px 28px;border-left:1px solid var(--w15);transition:border-color .3s;}
+.f-block:hover{border-left-color:var(--gold);}
+.f-block+.f-block{border-top:1px solid var(--w04);}
+.f-block-title{font-size:13px;font-weight:500;color:var(--white);margin-bottom:8px;letter-spacing:.02em;}
+.f-block-body{font-size:14px;font-weight:400;color:var(--w65);line-height:1.85;}
+.f-result{margin-top:2px;padding:36px;background:linear-gradient(135deg,var(--royal) 0%,var(--cobalt) 100%);border:1px solid rgba(201,168,76,.15);position:relative;overflow:hidden;}
+.f-result::before{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.13) 0%,transparent 65%);}
+.f-result-label{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.f-result-n{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;color:var(--white);line-height:1;margin-bottom:10px;}
+.f-result-n span{color:var(--gold);}
+.f-result-desc{font-size:14px;font-weight:400;color:var(--w70);line-height:1.75;margin-bottom:20px;}
+.f-result-detail{padding-top:18px;border-top:1px solid var(--w15);display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.f-detail{font-size:12px;font-weight:400;color:var(--w65);line-height:1.6;}
+.f-detail strong{color:var(--white);font-weight:500;display:block;margin-bottom:2px;}
 /* ─── TESE ─── */
 .tese{padding:var(--section-pad);background:var(--abyss);position:relative;overflow:hidden;}
 .tese::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 100% 40%,rgba(13,46,90,.35) 0%,transparent 55%);}
@@ -852,17 +871,17 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
       <div class="faq-title">Perguntas frequentes</div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Como vocês se diferenciam de uma consultoria de marketing?
+          O que a Lumexa Capital faz na prática?
           <span class="faq-q-icon">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Consultorias entregam recomendações. Nós executamos. Entramos como sócios operacionais — com capital, estrutura e equipe dedicada. Nosso resultado depende do seu.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Montamos a operação completa da clínica — captação de pacientes, estrutura comercial, gestão financeira e equipe operacional. O médico continua focado em medicina. Nós cuidamos do resto.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          O que a Lumexa Capital leva em troca da parceria?
+          Como funciona o modelo financeiro da parceria?
           <span class="faq-q-icon">+</span>
         </button>
-        <div class="faq-a"><div class="faq-a-inner">Participamos do crescimento gerado pela parceria — não do faturamento atual. Estruturamos cada deal de forma customizada, discutida em proposta formal após o processo de avaliação.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Participamos do crescimento gerado pela operação — não do faturamento atual. O médico não paga nada para entrar. A proposta é estruturada de forma customizada e apresentada após o processo de avaliação.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
