@@ -394,6 +394,9 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 @media(max-width:768px){.wa-float{bottom:20px;right:16px;}.wa-modal{width:calc(100vw - 32px);}}
 
 @media(min-width:1440px){.hero,.tese,.perfil,.avaliamos,.abordagem,.team,.careers,.apply,footer{padding-left:calc((100vw - 1440px)/2 + 72px);padding-right:calc((100vw - 1440px)/2 + 72px);}}
+
+.tc-logos{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid var(--w08);}
+.tc-logo{display:inline-block;font-size:9px;font-weight:500;letter-spacing:.06em;color:var(--w30);border:1px solid var(--w08);padding:3px 9px;border-radius:2px;text-transform:uppercase;white-space:nowrap;}
 </style>
 </head>
 <body>
@@ -481,7 +484,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <div class="f-block-body" data-i18n="phil.p1body">Médicos excepcionais perdem tempo, energia e clareza mental lidando com gestão, captação e operação. A clínica cresce devagar não por falta de talento médico — mas por falta de estrutura.</div>
         </div>
         <div class="f-block">
-          <div class="f-block-title" data-i18n="phil.p2title">Nossa tese</div>
+          <div class="f-block-title" data-i18n="phil.p2title">O médico é o ativo</div>
           <div class="f-block-body" data-i18n="phil.p2body">O médico é o ativo. A operação é nossa responsabilidade. Quando retiramos o peso da gestão do médico, ele faz o que faz de melhor — e a clínica cresce de forma estruturada e sustentável.</div>
         </div>
         <div class="f-block">
@@ -665,6 +668,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <span class="tc-tag">Albert Einstein</span>
           <span class="tc-tag">KCL Clinic</span>
         </div>
+        <div class="tc-logos"><span class="tc-logo">FUBOG</span><span class="tc-logo">Albert Einstein</span><span class="tc-logo">KCL Clinic</span></div>
         <a href="https://www.instagram.com/drakarlacaetano__" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:10px;letter-spacing:.1em;color:var(--pale);text-decoration:none;opacity:.7;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram</a>
       </div>
       <div class="tc">
@@ -958,7 +962,7 @@ pt:{
 'stat.1':'em 90 dias · KCL Clinic','stat.2':'cirurgias fechadas/mês','stat.3':'médicos parceiros · meta 2030',
 'phil.eyebrow':'Filosofia','phil.title1':'Por que','phil.title2':'existimos.',
 'phil.p1title':'O problema','phil.p1body':'Médicos excepcionais perdem tempo, energia e clareza mental lidando com gestão, captação e operação. A clínica cresce devagar não por falta de talento médico — mas por falta de estrutura.',
-'phil.p2title':'Nossa tese','phil.p2body':'O médico é o ativo. A operação é nossa responsabilidade. Quando retiramos o peso da gestão do médico, ele faz o que faz de melhor — e a clínica cresce de forma estruturada e sustentável.',
+'phil.p2title':'O médico é o ativo','phil.p2body':'O médico é o ativo. A operação é nossa responsabilidade. Quando retiramos o peso da gestão do médico, ele faz o que faz de melhor — e a clínica cresce de forma estruturada e sustentável.',
 'phil.p3title':'O resultado','phil.p3body':'Nosso primeiro parceiro médico é a prova do modelo. Os números falam por si.',
 'result.label':'Case de Investimento','result.n':'em 90 dias.',
 'result.desc':'Agenda estruturada, ticket reposicionado e 20 novas cirurgias fechadas por mês — resultado de operação, não de sorte.',
@@ -1034,7 +1038,7 @@ en:{
 'stat.1':'in 90 days · KCL Clinic','stat.2':'surgeries closed/month','stat.3':'physician partners · target 2030',
 'phil.eyebrow':'Philosophy','phil.title1':'Why we','phil.title2':'exist.',
 'phil.p1title':'The problem','phil.p1body':'Exceptional physicians lose time, energy and mental clarity dealing with management, patient acquisition and operations. Clinics grow slowly not from lack of medical talent — but lack of structure.',
-'phil.p2title':'Our thesis','phil.p2body':'The physician is the asset. Operations are our responsibility. When we remove the burden of management, physicians do what they do best — and the clinic grows in a structured, sustainable way.',
+'phil.p2title':'The physician is the asset','phil.p2body':'The physician is the asset. Operations are our responsibility. When we remove the burden of management, physicians do what they do best — and the clinic grows in a structured, sustainable way.',
 'phil.p3title':'The result','phil.p3body':'Our first physician partner is the proof of model. The numbers speak for themselves.',
 'result.label':'Investment Case','result.n':'in 90 days.',
 'result.desc':'Structured schedule, repositioned ticket and 20 new surgeries closed per month — the result of operations, not luck.',
@@ -1110,7 +1114,7 @@ es:{
 'stat.1':'en 90 días · KCL Clinic','stat.2':'cirugías cerradas/mes','stat.3':'médicos socios · meta 2030',
 'phil.eyebrow':'Filosofía','phil.title1':'Por qué','phil.title2':'existimos.',
 'phil.p1title':'El problema','phil.p1body':'Médicos excepcionales pierden tiempo, energía y claridad mental lidiando con gestión, captación y operaciones. Las clínicas crecen lentamente no por falta de talento médico — sino por falta de estructura.',
-'phil.p2title':'Nuestra tesis','phil.p2body':'El médico es el activo. Las operaciones son nuestra responsabilidad. Cuando eliminamos la carga de gestión, el médico hace lo que mejor sabe — y la clínica crece de manera estructurada y sostenible.',
+'phil.p2title':'El médico es el activo','phil.p2body':'El médico es el activo. Las operaciones son nuestra responsabilidad. Cuando eliminamos la carga de gestión, el médico hace lo que mejor sabe — y la clínica crece de manera estructurada y sostenible.',
 'phil.p3title':'El resultado','phil.p3body':'Nuestro primer socio médico es la prueba del modelo. Los números hablan por sí solos.',
 'result.label':'Caso de Inversión','result.n':'en 90 días.',
 'result.desc':'Agenda estructurada, ticket reposicionado y 20 nuevas cirugías cerradas por mes — resultado de operación, no de suerte.',
