@@ -27,7 +27,7 @@ body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:998;o
 .no-anim{animation:none!important;opacity:1!important;transform:none!important;}
 
 /* ─── LANG ─── */
-.lang-sw{display:flex;border:1px solid var(--w08);border-radius:1px;overflow:hidden;flex-shrink:0;}
+.lang-sw{display:flex;border:1px solid var(--w15);border-radius:1px;overflow:hidden;flex-shrink:0;}
 .lang-btn{font-size:10px;font-weight:500;letter-spacing:.1em;color:var(--w30);background:transparent;border:none;border-right:1px solid var(--w08);padding:7px 11px;cursor:pointer;transition:color .2s,background .2s;}
 .lang-btn:last-child{border-right:none;}
 .lang-btn:hover{color:var(--white);background:var(--w04);}
@@ -44,7 +44,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .nav-actions{display:flex;gap:10px;align-items:center;}
 .nav-cta{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.35);padding:8px 18px;border-radius:1px;text-decoration:none;transition:background .2s,color .2s;white-space:nowrap;}
 .nav-cta:hover{background:var(--gold);color:var(--abyss);}
-.nav-inv{font-size:10px;color:var(--w30);border:1px solid var(--w08);padding:8px 14px;border-radius:1px;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap;}
+.nav-inv{font-size:10px;color:var(--w50);border:1px solid var(--w15);padding:8px 14px;border-radius:1px;cursor:pointer;transition:color .2s,border-color .2s;white-space:nowrap;}
 .nav-inv:hover{color:var(--white);border-color:var(--w30);}
 
 /* ─── HERO ─── */
@@ -56,23 +56,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .hero-eyebrow{font-size:10px;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;display:block;}
 h1.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(48px,5.8vw,86px);font-weight:400;line-height:1.08;letter-spacing:.01em;color:var(--white);margin-bottom:28px;}
 h1.hero-h1 em{font-style:italic;color:var(--gold);}
-.hero-sub{font-size:16px;font-weight:300;line-height:1.8;color:var(--w70);max-width:500px;margin-bottom:48px;}
+.hero-sub{font-size:16px;font-weight:300;line-height:1.85;color:var(--w70);max-width:500px;margin-bottom:48px;}
 .hero-actions{display:flex;align-items:center;gap:24px;margin-bottom:72px;}
 .btn-prim{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--abyss);background:var(--gold);padding:14px 32px;border-radius:1px;text-decoration:none;transition:background .2s;display:inline-block;border:none;cursor:pointer;}
 .btn-prim:hover{background:var(--gold-lt);}
-.btn-ghost{font-size:12px;font-weight:300;color:var(--w50);text-decoration:none;letter-spacing:.06em;transition:color .2s;}
+.btn-ghost{font-size:13px;font-weight:400;color:var(--w70);text-decoration:none;letter-spacing:.06em;transition:color .2s;}
 .btn-ghost:hover{color:var(--white);}
 
 .scroll-indicator{position:absolute;right:64px;bottom:40px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;}
 .scroll-line{width:1px;height:44px;background:linear-gradient(180deg,transparent,var(--gold));}
-.scroll-label{font-size:9px;letter-spacing:.2em;color:var(--w30);text-transform:uppercase;writing-mode:vertical-rl;}
+.scroll-label{font-size:9px;letter-spacing:.2em;color:var(--w50);text-transform:uppercase;writing-mode:vertical-rl;}
 
 /* ─── SHARED SECTION STYLES ─── */
 .sec-eyebrow{font-size:9px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block;}
 .sec-eyebrow-pale{font-size:9px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--pale);margin-bottom:14px;display:block;}
 h2.sec-title{font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,50px);font-weight:400;line-height:1.12;color:var(--white);}
 h2.sec-title em{font-style:italic;color:var(--pale);}
-.sec-lead{font-size:15px;font-weight:300;line-height:1.8;color:var(--w70);max-width:460px;margin-top:14px;}
+.sec-lead{font-size:15px;font-weight:300;line-height:1.85;color:var(--w70);max-width:460px;margin-top:14px;}
 .divider-full{height:1px;background:linear-gradient(90deg,transparent,var(--w15) 30%,var(--w15) 70%,transparent);}
 
 /* ─── FILOSOFIA ─── */
@@ -85,13 +85,13 @@ h2.sec-title em{font-style:italic;color:var(--pale);}
 .f-block:hover{border-left-color:var(--gold);}
 .f-block+.f-block{border-top:1px solid var(--w04);}
 .f-block-title{font-size:13px;font-weight:500;color:var(--white);margin-bottom:8px;letter-spacing:.02em;}
-.f-block-body{font-size:14px;font-weight:300;color:var(--w65);line-height:1.82;}
+.f-block-body{font-size:14px;font-weight:300;color:var(--w65);line-height:1.85;}
 .f-result{margin-top:2px;padding:36px;background:linear-gradient(135deg,var(--royal) 0%,var(--cobalt) 100%);border:1px solid rgba(201,168,76,.15);position:relative;overflow:hidden;}
 .f-result::before{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.13) 0%,transparent 65%);}
 .f-result-label{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
 .f-result-n{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;color:var(--white);line-height:1;margin-bottom:10px;}
 .f-result-n span{color:var(--gold);}
-.f-result-desc{font-size:13px;font-weight:300;color:var(--w70);line-height:1.72;margin-bottom:20px;}
+.f-result-desc{font-size:13px;font-weight:300;color:var(--w70);line-height:1.75;margin-bottom:20px;}
 .f-result-detail{padding-top:18px;border-top:1px solid var(--w15);display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
 .f-detail{font-size:11px;font-weight:300;color:var(--w65);line-height:1.6;}
 .f-detail strong{color:var(--white);font-weight:500;display:block;margin-bottom:2px;}
@@ -113,12 +113,12 @@ h2.sec-title em{font-style:italic;color:var(--pale);}
 .dd::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 100% 25%,rgba(26,82,153,.18) 0%,transparent 55%),radial-gradient(ellipse 35% 50% at 0% 85%,rgba(13,46,90,.35) 0%,transparent 50%);}
 .dd-inner{position:relative;z-index:1;}
 .dd-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:56px;}
-.dd-statement{font-size:15px;font-weight:300;color:var(--w70);line-height:1.82;border-left:2px solid var(--pale);padding-left:24px;}
+.dd-statement{font-size:15px;font-weight:300;color:var(--w70);line-height:1.85;border-left:2px solid var(--pale);padding-left:24px;}
 .dd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(75,137,204,.1);margin-bottom:1px;}
 .dd-pillar{padding:36px 32px;background:linear-gradient(145deg,var(--deep) 0%,rgba(13,46,90,.8) 100%);border:1px solid rgba(75,137,204,.12);}
 .dd-p-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--pale);margin-bottom:12px;}
 .dd-p-title{font-size:14px;font-weight:500;color:var(--white);margin-bottom:10px;}
-.dd-p-body{font-size:12px;font-weight:300;color:var(--w65);line-height:1.72;}
+.dd-p-body{font-size:12px;font-weight:300;color:var(--w65);line-height:1.75;}
 .dd-note{padding:24px 32px;background:rgba(75,137,204,.05);border:1px solid rgba(75,137,204,.12);border-top:none;font-size:12px;font-weight:300;color:var(--w65);line-height:1.75;}
 .dd-note strong{color:var(--pale);font-weight:500;}
 
@@ -128,7 +128,7 @@ h2.sec-title em{font-style:italic;color:var(--pale);}
 .team-inner{position:relative;z-index:1;}
 .team-header{margin-bottom:56px;}
 .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:2px;}
-.tc{padding:36px 32px;background:var(--w04);border:1px solid var(--w08);transition:background .3s;}
+.tc{padding:36px 32px;background:var(--w04);border:1px solid var(--w15);transition:background .3s,border-color .3s;}
 .tc:hover{background:rgba(13,46,90,.5);}
 .tc-featured{background:linear-gradient(145deg,var(--royal) 0%,var(--cobalt) 100%);border-color:rgba(201,168,76,.18);}
 .tc-featured:hover{background:linear-gradient(145deg,rgba(13,46,90,.9) 0%,rgba(19,64,128,.9) 100%);}
@@ -138,12 +138,12 @@ h2.sec-title em{font-style:italic;color:var(--pale);}
 .tc-photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
 .tc-photo-placeholder svg{opacity:.25;}
 .tc-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:12px;line-height:1.15;}
-.tc-bio{font-size:12px;font-weight:300;color:var(--w65);line-height:1.72;margin-bottom:18px;}
+.tc-bio{font-size:12px;font-weight:300;color:var(--w65);line-height:1.75;margin-bottom:18px;}
 .tc-bio-clamp{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
 .tc-tags{display:flex;flex-wrap:wrap;gap:5px;}
 .tc-tag{font-size:9px;letter-spacing:.07em;border:1px solid var(--w30);padding:4px 9px;border-radius:1px;color:var(--w65);}
-.investors-bar{padding:24px 32px;background:var(--w04);border:1px solid var(--w08);border-top:none;display:flex;align-items:center;gap:0;flex-wrap:wrap;}
-.inv-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--w30);margin-right:32px;white-space:nowrap;}
+.investors-bar{padding:24px 32px;background:var(--w04);border:1px solid var(--w15);border-top:none;display:flex;align-items:center;gap:0;flex-wrap:wrap;}
+.inv-label{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--w50);margin-right:32px;white-space:nowrap;}
 .inv-item{font-family:'Playfair Display',serif;font-size:14px;font-weight:400;color:var(--w65);padding:6px 20px;border-right:1px solid var(--w08);letter-spacing:.02em;transition:color .2s;cursor:default;}
 .inv-item:hover{color:var(--white);}
 .inv-item:last-child{border-right:none;}
@@ -155,16 +155,16 @@ h2.sec-title em{font-style:italic;color:var(--pale);}
 .careers-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:48px;}
 .careers-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
 .cj:last-child{grid-column:1/-1;}
-.cj{padding:32px 28px;background:var(--w04);border:1px solid var(--w08);display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:background .3s,border-color .3s;cursor:pointer;}
+.cj{padding:32px 28px;background:var(--w04);border:1px solid var(--w15);display:flex;flex-direction:column;justify-content:space-between;gap:16px;transition:background .3s,border-color .3s;cursor:pointer;}
 .cj:hover{background:rgba(13,46,90,.4);border-color:rgba(45,109,181,.2);}
 .cj-area{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
 .cj-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--white);margin-bottom:8px;}
-.cj-body{font-size:12px;font-weight:300;color:var(--w65);line-height:1.72;}
+.cj-body{font-size:12px;font-weight:300;color:var(--w65);line-height:1.75;}
 .cj-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;}
 .cj-tag{font-size:9px;letter-spacing:.07em;border:1px solid var(--w30);padding:4px 9px;border-radius:1px;color:var(--w65);}
 .cj-foot{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--w08);}
 .cj-cta{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;}
-.careers-note{margin-top:2px;padding:16px 24px;background:var(--w04);border:1px solid var(--w08);font-size:12px;font-weight:300;color:var(--w65);line-height:1.7;}
+.careers-note{margin-top:2px;padding:16px 24px;background:var(--w04);border:1px solid var(--w15);font-size:12px;font-weight:300;color:var(--w65);line-height:1.75;}
 .careers-note a{color:var(--gold);text-decoration:none;}
 
 /* ─── APPLY ─── */
@@ -172,35 +172,35 @@ h2.sec-title em{font-style:italic;color:var(--pale);}
 .apply::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 65% at 100% 50%,rgba(20,64,128,.22) 0%,transparent 50%);}
 .apply-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start;}
 .apply-notes{display:flex;flex-direction:column;gap:14px;margin-top:36px;}
-.apply-note-item{display:flex;align-items:flex-start;gap:14px;font-size:13px;font-weight:300;color:var(--w65);line-height:1.65;}
+.apply-note-item{display:flex;align-items:flex-start;gap:14px;font-size:13px;font-weight:300;color:var(--w65);line-height:1.75;}
 .apply-note-line{width:16px;height:1px;background:var(--gold);flex-shrink:0;margin-top:9px;}
 /* form */
-.form-card{background:var(--abyss);border:1px solid var(--w08);padding:44px;}
+.form-card{background:var(--abyss);border:1px solid var(--w15);padding:44px;}
 .form-card-header{margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--w08);}
 .form-card-label{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
 .form-card-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--white);}
 .fg{margin-bottom:16px;}
 .fl{font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--w50);margin-bottom:6px;display:block;}
-.fi{width:100%;background:var(--w04);border:1px solid var(--w08);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:var(--white);outline:none;transition:border-color .2s,background .2s;border-radius:0;}
+.fi{width:100%;background:var(--w04);border:1px solid var(--w15);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:var(--white);outline:none;transition:border-color .2s,background .2s;border-radius:0;}
 .fi::placeholder{color:var(--w30);}
 .fi:focus{border-color:rgba(201,168,76,.4);background:rgba(255,255,255,.03);}
 .ft{resize:vertical;min-height:88px;}
 .fr{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.fs{width:100%;background:var(--w04);border:1px solid var(--w08);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:var(--white);outline:none;transition:border-color .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,.2)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-color:var(--w04);}
+.fs{width:100%;background:var(--w04);border:1px solid var(--w15);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:var(--white);outline:none;transition:border-color .2s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,.2)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-color:var(--w04);}
 .fs:focus{border-color:rgba(201,168,76,.4);}
 .fs option,.fs optgroup{background:var(--deep);}
 .fsub{width:100%;margin-top:20px;background:var(--gold);color:var(--abyss);font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;transition:background .2s;}
 .fsub:hover{background:var(--gold-lt);}
-.fdisclaim{font-size:10px;color:var(--w50);text-align:center;margin-top:12px;line-height:1.65;font-weight:300;}
+.fdisclaim{font-size:10px;color:var(--w50);text-align:center;margin-top:12px;line-height:1.75;font-weight:300;}
 .form-success{display:none;flex-direction:column;align-items:flex-start;padding:32px 0;gap:18px;}
 .success-rule{width:28px;height:1px;background:var(--gold);}
 .success-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:400;color:var(--white);}
-.success-body{font-size:13px;color:var(--w70);line-height:1.8;font-weight:300;}
+.success-body{font-size:13px;color:var(--w70);line-height:1.85;font-weight:300;}
 
 /* ─── MODAL ─── */
 .modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(3,11,24,.92);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px;}
 .modal-overlay.open{display:flex;}
-.modal{background:var(--deep);border:1px solid var(--w08);padding:48px;width:100%;max-width:400px;position:relative;}
+.modal{background:var(--deep);border:1px solid var(--w15);padding:48px;width:100%;max-width:400px;position:relative;}
 .modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--w30);font-size:16px;cursor:pointer;transition:color .2s;padding:4px 8px;}
 .modal-close:hover{color:var(--white);}
 .modal-logo{display:flex;align-items:baseline;gap:7px;margin-bottom:28px;}
@@ -208,15 +208,15 @@ h2.sec-title em{font-style:italic;color:var(--pale);}
 .modal-logo-c{font-family:'DM Sans',sans-serif;font-size:6px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;}
 .modal-eyebrow{font-size:9px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:9px;}
 .modal-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--white);margin-bottom:6px;}
-.modal-sub{font-size:12px;font-weight:300;color:var(--w65);line-height:1.7;margin-bottom:28px;}
+.modal-sub{font-size:12px;font-weight:300;color:var(--w65);line-height:1.75;margin-bottom:28px;}
 .modal-fg{margin-bottom:13px;}
-.modal-label{font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--w30);margin-bottom:6px;display:block;}
-.modal-input{width:100%;background:rgba(0,0,0,.25);border:1px solid var(--w08);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:var(--white);outline:none;transition:border-color .2s;}
+.modal-label{font-size:9px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--w50);margin-bottom:6px;display:block;}
+.modal-input{width:100%;background:rgba(0,0,0,.25);border:1px solid var(--w15);padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:300;color:var(--white);outline:none;transition:border-color .2s;}
 .modal-input::placeholder{color:var(--w30);}
 .modal-input:focus{border-color:rgba(201,168,76,.4);}
 .modal-btn{width:100%;margin-top:20px;background:transparent;color:var(--gold);font-family:'DM Sans',sans-serif;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:13px;border:1px solid rgba(201,168,76,.35);cursor:pointer;transition:background .2s,color .2s;}
 .modal-btn:hover{background:var(--gold);color:var(--abyss);}
-.modal-access{font-size:10px;color:var(--w50);text-align:center;margin-top:12px;line-height:1.7;font-weight:300;}
+.modal-access{font-size:10px;color:var(--w50);text-align:center;margin-top:12px;line-height:1.75;font-weight:300;}
 
 /* ─── FOOTER ─── */
 footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w08);display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;}
@@ -231,7 +231,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 .fc-contact{font-size:12px;color:var(--w50);line-height:2;font-weight:300;}
 .footer-bottom{grid-column:1/-1;padding-top:24px;border-top:1px solid var(--w04);display:flex;justify-content:space-between;align-items:center;}
 .footer-copy{font-size:10px;color:rgba(255,255,255,.14);letter-spacing:.07em;}
-.footer-inv{font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.07em;cursor:pointer;transition:color .2s;}
+.footer-inv{font-size:10px;color:var(--w50);letter-spacing:.07em;cursor:pointer;transition:color .2s;}
 .footer-inv:hover{color:var(--w50);}
 
 
@@ -251,7 +251,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 .perfil-cards{display:flex;flex-direction:column;gap:2px;}
 .perfil-card{
   display:grid;grid-template-columns:56px 1fr;gap:28px;align-items:start;
-  padding:32px 36px;background:var(--w04);border:1px solid var(--w08);
+  padding:32px 36px;background:var(--w04);border:1px solid var(--w15);
   transition:background .3s,border-color .3s;
 }
 .perfil-card:hover{background:rgba(13,46,90,.5);border-color:rgba(45,109,181,.25);}
@@ -265,7 +265,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
   background:rgba(201,168,76,.06);
 }
 .perfil-card-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:10px;}
-.perfil-card-body{font-size:14px;font-weight:300;color:var(--w70);line-height:1.82;}
+.perfil-card-body{font-size:14px;font-weight:300;color:var(--w70);line-height:1.85;}
 .perfil-cta{
   margin-top:2px;padding:28px 40px;
   background:linear-gradient(135deg,var(--royal) 0%,var(--cobalt) 100%);
@@ -321,6 +321,33 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
   .footer-bottom{flex-direction:column;gap:10px;text-align:center;}
   .investors-bar{flex-direction:column;align-items:flex-start;gap:10px;}
 }
+
+@media(max-width:480px){
+  .hero{padding:0 20px 72px;}
+  h1.hero-h1{font-size:clamp(36px,9vw,52px);}
+  .hero-sub{font-size:14px;}
+  .hero-actions{flex-direction:column;align-items:flex-start;gap:16px;}
+  .btn-prim{width:100%;text-align:center;}
+  .fr{grid-template-columns:1fr!important;}
+  .perfil-card{grid-template-columns:1fr;}
+  .perfil-card-num{margin-bottom:10px;}
+  .avaliamos-inner,.tese-inner,.perfil-header{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr;}
+  .a-grid,.dd-grid,.careers-grid{grid-template-columns:1fr;}
+  .f-result-detail{grid-template-columns:1fr;}
+  .tc-featured{grid-column:span 1;}
+}
+
+.scroll-reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+.scroll-reveal.visible{opacity:1;transform:translateY(0);}
+.scroll-reveal-delay-1{transition-delay:.1s;}
+.scroll-reveal-delay-2{transition-delay:.22s;}
+.scroll-reveal-delay-3{transition-delay:.34s;}
+
+.fi:invalid:not(:placeholder-shown){border-color:rgba(255,80,80,.4);}
+.fi:valid:not(:placeholder-shown){border-color:rgba(201,168,76,.25);}
+.fi:focus:invalid{border-color:rgba(255,80,80,.5);}
+.fsub:disabled{opacity:.5;cursor:not-allowed;}
 </style>
 </head>
 <body>
@@ -350,7 +377,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 <nav>
   <a href="#" class="nav-logo"><span class="nav-l">Lumexa</span><span class="nav-c">Capital</span></a>
   <div class="nav-links">
-    <a href="#filosofia" data-i18n="nav.philosophy">Filosofia</a>
+    <a href="#tese" data-i18n="nav.thesis">Nossa tese</a>
     <a href="#tese" data-i18n="nav.thesis">Nossa tese</a>
     <a href="#como-avaliamos" data-i18n="nav.process">Como avaliamos</a>
     <a href="#equipe" data-i18n="nav.team">Equipe</a>
@@ -373,12 +400,11 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
   <div class="hero-grid"></div>
   <div class="hero-content">
     <div class="hero-rule fade d1"></div>
-    <span class="hero-eyebrow fade d1" data-i18n="hero.eyebrow">O sócio operacional do médico que quer crescer.</span>
+    <span class="hero-eyebrow fade d1" data-i18n="hero.eyebrow">Lumexa Capital · São Paulo</span>
     <h1 class="hero-h1 fade d2">
-      <span data-i18n="hero.h1a">O sócio que o médico</span><br>
-      <span data-i18n="hero.h1b">precisava</span> <em data-i18n="hero.h1c">— mas não sabia que existia.</em>
+      <span data-i18n="hero.h1a">O sócio que o médico</span> <span data-i18n="hero.h1b">precisava</span> <em data-i18n="hero.h1c">— mas não sabia que existia.</em>
     </h1>
-    <p class="hero-sub fade d3" data-i18n="hero.sub">A Lumexa Capital investe em médicos que querem crescer sem abrir mão da medicina. Entramos como sócio operacional — com capital, estrutura e execução. Crescemos juntos: nosso resultado depende do seu.</p>
+    <p class="hero-sub fade d3" data-i18n="hero.sub">O sócio operacional do médico que quer crescer. A Lumexa Capital investe com capital, estrutura e execução — sem que você abra mão da medicina. Crescemos juntos: nosso resultado depende do seu.</p>
     <div class="hero-actions fade d4">
       <a href="#apply" class="btn-prim" data-i18n="hero.cta2">Solicitar candidatura →</a>
       <a href="#tese" class="btn-ghost" data-i18n="hero.cta1">Nossa abordagem</a>
@@ -393,43 +419,6 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 
 <div class="divider-full"></div>
 
-<!-- FILOSOFIA -->
-<section class="filosofia" id="filosofia">
-  <div class="f-inner">
-    <div class="f-left">
-      <span class="sec-eyebrow" data-i18n="phil.eyebrow">Filosofia</span>
-      <h2 class="sec-title"><span data-i18n="phil.title1">Por que</span><br><em data-i18n="phil.title2">existimos.</em></h2>
-    </div>
-    <div>
-      <div class="f-blocks">
-        <div class="f-block">
-          <div class="f-block-title" data-i18n="phil.p1title">O problema</div>
-          <div class="f-block-body" data-i18n="phil.p1body">Médicos excepcionais perdem tempo, energia e clareza mental lidando com gestão, captação e operação. A clínica cresce devagar não por falta de talento médico — mas por falta de estrutura.</div>
-        </div>
-        <div class="f-block">
-          <div class="f-block-title" data-i18n="phil.p2title">Nossa tese</div>
-          <div class="f-block-body" data-i18n="phil.p2body">O médico é o ativo. A operação é nossa responsabilidade. Quando retiramos o peso da gestão do médico, ele faz o que faz de melhor — e a clínica cresce de forma estruturada e sustentável.</div>
-        </div>
-        <div class="f-block">
-          <div class="f-block-title" data-i18n="phil.p3title">O resultado</div>
-          <div class="f-block-body" data-i18n="phil.p3body">Nosso primeiro parceiro médico é a prova do modelo. Os números falam por si.</div>
-        </div>
-      </div>
-      <div class="f-result">
-        <div class="f-result-label" data-i18n="result.label">KCL Clinic · Parceiro</div>
-        <div class="f-result-n"><span>5x</span> <span data-i18n="result.n">em 90 dias.</span></div>
-        <div class="f-result-desc" data-i18n="result.desc">Agenda estruturada, ticket reposicionado e 20 novas cirurgias fechadas por mês — resultado de operação, não de sorte.</div>
-        <div class="f-result-detail">
-          <div class="f-detail"><strong data-i18n="result.d1t">Agenda</strong><span data-i18n="result.d1b">Lotada em 30 dias</span></div>
-          <div class="f-detail"><strong data-i18n="result.d2t">Ticket</strong><span data-i18n="result.d2b">Reposicionado e otimizado</span></div>
-          <div class="f-detail"><strong data-i18n="result.d3t">Cirurgias</strong><span data-i18n="result.d3b">+20 fechadas/mês</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider-full"></div>
 
 <!-- TESE -->
 <section class="tese" id="tese">
@@ -481,21 +470,21 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
       <p class="sec-lead" data-i18n="perfil.lead">Não buscamos qualquer médico. Buscamos um perfil específico — e quando encontramos, investimos com convicção.</p>
     </div>
     <div class="perfil-cards">
-      <div class="perfil-card">
+      <div class="perfil-card scroll-reveal scroll-reveal-delay-1">
         <div class="perfil-card-num">1</div>
         <div>
           <div class="perfil-card-title" data-i18n="perfil.c1title">Excelência clínica reconhecida</div>
           <div class="perfil-card-body" data-i18n="perfil.c1body">Você é referência na sua especialidade. Pacientes te procuram. Colegas te respeitam. Sua agenda cresceria naturalmente — se houvesse estrutura para absorver a demanda.</div>
         </div>
       </div>
-      <div class="perfil-card">
+      <div class="perfil-card scroll-reveal scroll-reveal-delay-2">
         <div class="perfil-card-num">2</div>
         <div>
           <div class="perfil-card-title" data-i18n="perfil.c2title">Ambição de escala, não de complexidade</div>
           <div class="perfil-card-body" data-i18n="perfil.c2body">Você quer crescer — mas não quer se tornar gestor. Não quer contratar equipe, negociar contrato de aluguel ou entender funil de marketing. Você quer operar. Nós cuidamos do resto.</div>
         </div>
       </div>
-      <div class="perfil-card">
+      <div class="perfil-card scroll-reveal scroll-reveal-delay-3">
         <div class="perfil-card-num">3</div>
         <div>
           <div class="perfil-card-title" data-i18n="perfil.c3title">Disposição para uma parceria real</div>
@@ -523,7 +512,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
       <p class="sec-lead" style="margin-top:16px;" data-i18n="aval.lead">Conduzimos cada candidatura com o mesmo rigor de um processo de investimento institucional. Cada etapa tem um propósito — e nem toda candidatura avança.</p>
     </div>
     <div class="timeline">
-      <div class="tl-step">
+      <div class="tl-step scroll-reveal scroll-reveal-delay-1">
         <div class="tl-dot tl-dot-active"><span>1</span></div>
         <div class="tl-content">
           <div class="tl-label" data-i18n="aval.s1label">Candidatura</div>
@@ -531,7 +520,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <div class="tl-body" data-i18n="aval.s1body">Você preenche o formulário com perfil clínico, especialidade e contexto atual. Nenhum compromisso nessa etapa.</div>
         </div>
       </div>
-      <div class="tl-step">
+      <div class="tl-step scroll-reveal scroll-reveal-delay-2">
         <div class="tl-dot tl-dot-active"><span>2</span></div>
         <div class="tl-content">
           <div class="tl-label" data-i18n="aval.s2label">Time de Investimento</div>
@@ -540,7 +529,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <span class="tl-tag" data-i18n="aval.who">Quem avalia: Time de Investimento</span>
         </div>
       </div>
-      <div class="tl-step">
+      <div class="tl-step scroll-reveal scroll-reveal-delay-3">
         <div class="tl-dot tl-dot-active"><span>3</span></div>
         <div class="tl-content">
           <div class="tl-label" data-i18n="aval.s3label">Due Diligence</div>
@@ -549,7 +538,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <span class="tl-tag" data-i18n="aval.whoinv">Quem avalia: Time de Investimento + Due Diligence</span>
         </div>
       </div>
-      <div class="tl-step">
+      <div class="tl-step scroll-reveal scroll-reveal-delay-3">
         <div class="tl-dot"><span>4</span></div>
         <div class="tl-content">
           <div class="tl-label" data-i18n="aval.s4label">Comitê de Investimento</div>
@@ -558,7 +547,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <span class="tl-tag" data-i18n="aval.whocom">Quem delibera: Comitê de Investimento</span>
         </div>
       </div>
-      <div class="tl-step">
+      <div class="tl-step scroll-reveal scroll-reveal-delay-3">
         <div class="tl-dot"><span>5</span></div>
         <div class="tl-content">
           <div class="tl-label" data-i18n="aval.s5label">Proposta formal</div>
@@ -640,6 +629,10 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <span class="tc-tag">Pixel Breeders</span>
           <span class="tc-tag">ML & Design</span>
         </div>
+        <a href="https://www.linkedin.com/in/fabricio-schiavo/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:10px;letter-spacing:.1em;color:var(--pale);text-decoration:none;opacity:.7;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
       </div>
       <!-- Row 3: Enzo -->
       <div class="tc" style="grid-column:1/-1;">
@@ -843,7 +836,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
   <div>
     <div class="fc-h" data-i18n="footer.nav">Navegação</div>
     <div class="fc-links">
-      <a href="#filosofia" data-i18n="nav.philosophy">Filosofia</a>
+      <a href="#tese" data-i18n="nav.thesis">Nossa tese</a>
       <a href="#tese" data-i18n="nav.thesis">Nossa tese</a>
       <a href="#como-avaliamos" data-i18n="nav.process">Como avaliamos</a>
       <a href="#equipe" data-i18n="nav.team">Equipe</a>
@@ -857,7 +850,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2026 Lumexa Capital</span>
-    <span class="footer-inv" onclick="openModal()" data-i18n="nav.investor">Área do Investidor</span>
+    <a href="#apply" class="footer-inv" data-i18n="nav.apply" style="text-decoration:none;">Candidatura →</a>
   </div>
 </footer>
 
@@ -880,8 +873,8 @@ pt:{
 'aval.s5label':'Proposta formal','aval.s5title':'Reunião com o Partner','aval.s5body':'Apresentamos a estrutura da parceria, os termos e as expectativas de crescimento. A partir daqui, construímos juntos.',
 'aval.who':'Quem avalia: Time de Investimento','aval.whoinv':'Quem avalia: Time de Investimento + Due Diligence','aval.whocom':'Quem delibera: Comitê de Investimento','aval.whopart':'Quem apresenta: Partner',
 'nav.thesis':'Nossa tese','nav.process':'Como avaliamos','nav.philosophy':'Filosofia','nav.approach':'Abordagem','nav.dd':'Due Diligence','nav.team':'Equipe','nav.careers':'Carreiras','nav.apply':'Candidatura','nav.investor':'Área do Investidor',
-'hero.eyebrow':'O sócio operacional do médico que quer crescer.','hero.h1a':'O sócio que o médico','hero.h1b':'precisava','hero.h1c':'— mas não sabia que existia.',
-'hero.sub':'A Lumexa Capital investe em médicos que querem crescer sem abrir mão da medicina. Entramos como sócio operacional — com capital, estrutura e execução. Crescemos juntos: nosso resultado depende do seu.',
+'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'O sócio que o médico','hero.h1b':'precisava','hero.h1c':'— mas não sabia que existia.',
+'hero.sub':'O sócio operacional do médico que quer crescer. A Lumexa Capital investe com capital, estrutura e execução — sem que você abra mão da medicina. Crescemos juntos: nosso resultado depende do seu.',
 'hero.cta1':'Nossa abordagem','hero.cta2':'Solicitar candidatura →',
 'stat.1':'em 90 dias · KCL Clinic','stat.2':'cirurgias fechadas/mês','stat.3':'médicos parceiros · meta 2030',
 'phil.eyebrow':'Filosofia','phil.title1':'Por que','phil.title2':'existimos.',
@@ -956,8 +949,8 @@ en:{
 'aval.s5label':'Formal proposal','aval.s5title':'Meeting with the Partner','aval.s5body':'We present the partnership structure, terms and growth expectations. From here, we build together.',
 'aval.who':'Who evaluates: Investment Team','aval.whoinv':'Who evaluates: Investment Team + Due Diligence','aval.whocom':'Who deliberates: Investment Committee','aval.whopart':'Who presents: Partner',
 'nav.thesis':'Our thesis','nav.process':'How we evaluate','nav.philosophy':'Philosophy','nav.approach':'Approach','nav.dd':'Due Diligence','nav.team':'Team','nav.careers':'Careers','nav.apply':'Apply','nav.investor':'Investor Area',
-'hero.eyebrow':'The operational partner physicians need — but never knew existed.','hero.h1a':'The partner physicians','hero.h1b':'needed','hero.h1c':'— but never knew existed.',
-'hero.sub':'Lumexa Capital invests in physicians who want to grow without giving up medicine. We enter as operational partners — with capital, structure and execution. We grow together: our results depend on yours.',
+'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'The partner physicians','hero.h1b':'needed','hero.h1c':'— but never knew existed.',
+'hero.sub':'The operational partner for physicians who want to grow. Lumexa Capital invests with capital, structure and execution — without you giving up medicine. We grow together: our results depend on yours.',
 'hero.cta1':'Our approach','hero.cta2':'Apply now →',
 'stat.1':'in 90 days · KCL Clinic','stat.2':'surgeries closed/month','stat.3':'physician partners · target 2030',
 'phil.eyebrow':'Philosophy','phil.title1':'Why we','phil.title2':'exist.',
@@ -1032,8 +1025,8 @@ es:{
 'aval.s5label':'Propuesta formal','aval.s5title':'Reunión con el Partner','aval.s5body':'Presentamos la estructura de la alianza, los términos y las expectativas de crecimiento. A partir de aquí, construimos juntos.',
 'aval.who':'Quién evalúa: Equipo de Inversiones','aval.whoinv':'Quién evalúa: Equipo de Inversiones + Due Diligence','aval.whocom':'Quién delibera: Comité de Inversión','aval.whopart':'Quién presenta: Partner',
 'nav.thesis':'Nuestra tesis','nav.process':'Cómo evaluamos','nav.philosophy':'Filosofía','nav.approach':'Enfoque','nav.dd':'Due Diligence','nav.team':'Equipo','nav.careers':'Carreras','nav.apply':'Postulación','nav.investor':'Área del Inversor',
-'hero.eyebrow':'El socio operacional que el médico necesitaba — pero no sabía que existía.','hero.h1a':'El socio que el médico','hero.h1b':'necesitaba','hero.h1c':'— pero no sabía que existía.',
-'hero.sub':'Lumexa Capital invierte en médicos que quieren crecer sin renunciar a la medicina. Entramos como socio operacional — con capital, estructura y ejecución. Crecemos juntos: nuestros resultados dependen de los suyos.',
+'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'El socio que el médico','hero.h1b':'necesitaba','hero.h1c':'— pero no sabía que existía.',
+'hero.sub':'El socio operacional para médicos que quieren crecer. Lumexa Capital invierte con capital, estructura y ejecución — sin que renuncies a la medicina. Crecemos juntos: nuestros resultados dependen de los suyos.',
 'hero.cta1':'Nuestro enfoque','hero.cta2':'Solicitar postulación →',
 'stat.1':'en 90 días · KCL Clinic','stat.2':'cirugías cerradas/mes','stat.3':'médicos socios · meta 2030',
 'phil.eyebrow':'Filosofía','phil.title1':'Por qué','phil.title2':'existimos.',
@@ -1138,6 +1131,19 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(t)t.scrollIntoView({behavior:'smooth'});
   });
 });
+
+// IntersectionObserver — scroll-triggered animations
+(function(){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if(el.isIntersecting){
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+})();
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 </script>
 </body>
