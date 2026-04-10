@@ -120,11 +120,11 @@ h2.sec-title em{font-style:italic;color:var(--pale);}
 .team::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 45% at 50% 0%,rgba(45,109,181,.12) 0%,transparent 55%);}
 .team-inner{position:relative;z-index:1;}
 .team-header{margin-bottom:56px;}
-.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:2px;}
+.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:0;}
 .tc{padding:36px 32px;background:var(--w04);border:1px solid var(--w15);transition:background .3s,border-color .3s;}
 .tc:hover{background:rgba(13,46,90,.5);}
-.tc-featured{background:linear-gradient(145deg,var(--royal) 0%,var(--cobalt) 100%);border-color:rgba(201,168,76,.18);}
-.tc-featured:hover{background:linear-gradient(145deg,rgba(13,46,90,.9) 0%,rgba(19,64,128,.9) 100%);}
+.tc-featured{background:var(--w04);border-color:var(--w08);}
+.tc-featured:hover{background:rgba(255,255,255,.04);}
 .tc-role{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
 .tc-photo{width:72px;height:72px;border-radius:50%;background:var(--w08);border:1px solid var(--w15);margin-bottom:16px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
 .tc-photo img{width:100%;height:100%;object-fit:cover;}
@@ -620,8 +620,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
       <h2 class="sec-title" data-i18n="team.title">Com quem você constrói.</h2>
     </div>
     <div class="team-grid">
-      <!-- Row 1: Mateus + Thiago -->
-      <div class="tc tc-featured">
+      <div class="tc">
         <div class="tc-photo"><img src="https://raw.githubusercontent.com/Camada-AI/lumexa-capital-site/main/photos/mateus.png" alt="Mateus Apolinário Ribeiro" loading="lazy"></div>
         <div class="tc-role">Managing Partner</div>
         <div class="tc-name">Mateus Apolinário Ribeiro</div>
@@ -637,7 +636,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           LinkedIn
         </a>
       </div>
-      <div class="tc tc-featured">
+      <div class="tc">
         <div class="tc-photo"><img src="https://raw.githubusercontent.com/Camada-AI/lumexa-capital-site/main/assets/thiago.png" alt="Thiago Mendonça" loading="lazy"></div>
         <div class="tc-role">Partner · Head of Value Creation</div>
         <div class="tc-name">Thiago Mendonça</div>
