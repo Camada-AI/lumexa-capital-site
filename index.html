@@ -259,9 +259,9 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 /* ─── PERFIL ─── */
 .perfil{padding:var(--section-pad);background:linear-gradient(170deg,var(--midnight) 0%,var(--deep) 100%);position:relative;}
 .perfil::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 0% 60%,rgba(26,82,153,.15) 0%,transparent 55%);}
-.perfil-inner{position:relative;z-index:1;}
+.perfil-inner{position:relative;z-index:1;display:flex;flex-direction:column;gap:64px;}
 .perfil-header{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px;}
-.perfil-cards{display:flex;flex-direction:column;gap:2px;}
+.perfil-cards{display:flex;flex-direction:column;gap:2px;position:relative;z-index:2;}
 .perfil-card{
   display:grid;grid-template-columns:56px 1fr;gap:28px;align-items:start;
   padding:32px 36px;background:var(--w04);border:1px solid var(--w15);
@@ -351,7 +351,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
   .tc-featured{grid-column:span 1;}
 }
 
-.scroll-reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+.scroll-reveal{opacity:1;transform:translateY(0);transition:opacity .7s ease,transform .7s ease;}
 .scroll-reveal.visible{opacity:1;transform:translateY(0);}
 .scroll-reveal-delay-1{transition-delay:.1s;}
 .scroll-reveal-delay-2{transition-delay:.22s;}
@@ -518,21 +518,21 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
       <p class="sec-lead" data-i18n="perfil.lead">Não buscamos qualquer médico. Buscamos um perfil específico — e quando encontramos, investimos com convicção.</p>
     </div>
     <div class="perfil-cards">
-      <div class="perfil-card scroll-reveal scroll-reveal-delay-1">
+      <div class="perfil-card">
         <div class="perfil-card-num">1</div>
         <div>
           <div class="perfil-card-title" data-i18n="perfil.c1title">Excelência clínica reconhecida</div>
           <div class="perfil-card-body" data-i18n="perfil.c1body">Você é referência na sua especialidade. Pacientes te procuram. Colegas te respeitam. Sua agenda cresceria naturalmente — se houvesse estrutura para absorver a demanda.</div>
         </div>
       </div>
-      <div class="perfil-card scroll-reveal scroll-reveal-delay-2">
+      <div class="perfil-card">
         <div class="perfil-card-num">2</div>
         <div>
           <div class="perfil-card-title" data-i18n="perfil.c2title">Ambição de escala, não de complexidade</div>
           <div class="perfil-card-body" data-i18n="perfil.c2body">Você quer crescer — mas não quer se tornar gestor. Não quer contratar equipe, negociar contrato de aluguel ou entender funil de marketing. Você quer operar. Nós cuidamos do resto.</div>
         </div>
       </div>
-      <div class="perfil-card scroll-reveal scroll-reveal-delay-3">
+      <div class="perfil-card">
         <div class="perfil-card-num">3</div>
         <div>
           <div class="perfil-card-title" data-i18n="perfil.c3title">Disposição para uma parceria real</div>
@@ -560,7 +560,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
       <p class="sec-lead" style="margin-top:16px;" data-i18n="aval.lead">Conduzimos cada candidatura com o mesmo rigor de um processo de investimento institucional. Cada etapa tem um propósito — e nem toda candidatura avança.</p>
     </div>
     <div class="timeline">
-      <div class="tl-step scroll-reveal scroll-reveal-delay-1">
+      <div class="tl-step">
         <div class="tl-dot tl-dot-active"><span>1</span></div>
         <div class="tl-content">
           <div class="tl-label" data-i18n="aval.s1label">Candidatura</div>
@@ -568,7 +568,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <div class="tl-body" data-i18n="aval.s1body">Você preenche o formulário com perfil clínico, especialidade e contexto atual. Nenhum compromisso nessa etapa.</div>
         </div>
       </div>
-      <div class="tl-step scroll-reveal scroll-reveal-delay-2">
+      <div class="tl-step">
         <div class="tl-dot tl-dot-active"><span>2</span></div>
         <div class="tl-content">
           <div class="tl-label" data-i18n="aval.s2label">Time de Investimento</div>
@@ -577,7 +577,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <span class="tl-tag" data-i18n="aval.who">Quem avalia: Time de Investimento</span>
         </div>
       </div>
-      <div class="tl-step scroll-reveal scroll-reveal-delay-3">
+      <div class="tl-step">
         <div class="tl-dot tl-dot-active"><span>3</span></div>
         <div class="tl-content">
           <div class="tl-label" data-i18n="aval.s3label">Due Diligence</div>
@@ -586,7 +586,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <span class="tl-tag" data-i18n="aval.whoinv">Quem avalia: Time de Investimento + Due Diligence</span>
         </div>
       </div>
-      <div class="tl-step scroll-reveal scroll-reveal-delay-3">
+      <div class="tl-step">
         <div class="tl-dot"><span>4</span></div>
         <div class="tl-content">
           <div class="tl-label" data-i18n="aval.s4label">Comitê de Investimento</div>
@@ -595,7 +595,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
           <span class="tl-tag" data-i18n="aval.whocom">Quem delibera: Comitê de Investimento</span>
         </div>
       </div>
-      <div class="tl-step scroll-reveal scroll-reveal-delay-3">
+      <div class="tl-step">
         <div class="tl-dot"><span>5</span></div>
         <div class="tl-content">
           <div class="tl-label" data-i18n="aval.s5label">Proposta formal</div>
