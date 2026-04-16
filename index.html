@@ -397,6 +397,15 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
 
 @media(min-width:1440px){.hero,.tese,.perfil,.avaliamos,.abordagem,.team,.careers,.apply,footer{padding-left:calc((100vw - 1440px)/2 + 72px);padding-right:calc((100vw - 1440px)/2 + 72px);}}
 
+
+.purpose-declaration{margin-top:80px;padding:72px 0 24px;position:relative;z-index:2;}
+.purpose-divider{width:60px;height:1px;background:linear-gradient(90deg,transparent 0%,rgba(201,168,76,.6) 50%,transparent 100%);margin:0 auto 48px;}
+.purpose-text{font-family:'Playfair Display',serif;font-size:clamp(22px,2.4vw,34px);font-weight:400;line-height:1.45;color:var(--white);text-align:center;max-width:820px;margin:0 auto;letter-spacing:-.01em;}
+.purpose-text em{font-style:italic;color:var(--gold);}
+@media (max-width:768px){
+  .purpose-declaration{margin-top:56px;padding:48px 0 16px;}
+  .purpose-text{font-size:20px;line-height:1.4;}
+}
 </style>
 </head>
 <body>
@@ -452,7 +461,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
     <h1 class="hero-h1 fade d2">
       <span data-i18n="hero.h1a">O sócio que o médico</span> <span data-i18n="hero.h1b">precisava</span> <em data-i18n="hero.h1c">— mas não sabia que existia.</em>
     </h1>
-    <p class="hero-sub fade d3" data-i18n="hero.sub">O sócio operacional do médico que quer crescer. A Lumexa Capital investe com capital, estrutura e execução — sem que você abra mão da medicina. Crescemos juntos: nosso resultado depende do seu.</p>
+    <p class="hero-sub fade d3" data-i18n="hero.sub">O médico que opera melhor raramente é o que mais fatura. A Lumexa Capital existe para corrigir essa distorção — com capital, estrutura e execução que devolvem o mercado a quem merece.</p>
     <div class="hero-actions fade d4">
       <a href="#apply" class="btn-prim" data-i18n="hero.cta2">Solicitar candidatura →</a>
       <a href="#tese" class="btn-ghost" data-i18n="hero.cta1">Nossa abordagem</a>
@@ -480,7 +489,7 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
       <div class="f-blocks">
         <div class="f-block">
           <div class="f-block-title" data-i18n="phil.p1title">O problema</div>
-          <div class="f-block-body" data-i18n="phil.p1body">Médicos excepcionais perdem tempo, energia e clareza mental lidando com gestão, captação e operação. A clínica cresce devagar não por falta de talento médico — mas por falta de estrutura.</div>
+          <div class="f-block-body" data-i18n="phil.p1body">O mercado de saúde estética não premia quem opera melhor. Premia quem aparece mais. Enquanto os melhores médicos operam sem estrutura, charlatães com bom marketing lotam agenda e capturam pacientes que não sabem diferenciar. O paciente paga a conta dessa distorção — e esse é o problema que a Lumexa Capital existe para resolver.</div>
         </div>
         <div class="f-block">
           <div class="f-block-title" data-i18n="phil.p2title">O médico é o ativo</div>
@@ -515,34 +524,38 @@ footer{padding:56px 72px;background:var(--midnight);border-top:1px solid var(--w
         <span class="sec-eyebrow" data-i18n="perfil.eyebrow">O perfil que buscamos</span>
         <h2 class="sec-title"><span data-i18n="perfil.title1">Médicos que</span> <em data-i18n="perfil.title2">pertencem aqui.</em></h2>
       </div>
-      <p class="sec-lead" data-i18n="perfil.lead">Não buscamos qualquer médico. Buscamos um perfil específico — e quando encontramos, investimos com convicção.</p>
+      <p class="sec-lead" data-i18n="perfil.lead">Buscamos o médico que o mercado não recompensa proporcionalmente ao seu nível. Os três princípios abaixo definem em quem acreditamos — e por que investimos.</p>
     </div>
     <div class="perfil-cards">
       <div class="perfil-card">
         <div class="perfil-card-num">1</div>
         <div>
-          <div class="perfil-card-title" data-i18n="perfil.c1title">Excelência clínica reconhecida</div>
-          <div class="perfil-card-body" data-i18n="perfil.c1body">Você é referência na sua especialidade. Pacientes te procuram. Colegas te respeitam. Sua agenda cresceria naturalmente — se houvesse estrutura para absorver a demanda.</div>
+          <div class="perfil-card-title" data-i18n="perfil.c1title">O melhor médico não deveria precisar saber de marketing.</div>
+          <div class="perfil-card-body" data-i18n="perfil.c1body">Sua formação foi em medicina. Não deveria ter que aprender funil, CRM ou copy para que a excelência técnica chegasse aos pacientes certos. Excelência clínica deveria falar por si — e o papel da Lumexa é fazer com que ela fale.</div>
         </div>
       </div>
       <div class="perfil-card">
         <div class="perfil-card-num">2</div>
         <div>
-          <div class="perfil-card-title" data-i18n="perfil.c2title">Ambição de escala, não de complexidade</div>
-          <div class="perfil-card-body" data-i18n="perfil.c2body">Você quer crescer — mas não quer se tornar gestor. Não quer contratar equipe, negociar contrato de aluguel ou entender funil de marketing. Você quer operar. Nós cuidamos do resto.</div>
+          <div class="perfil-card-title" data-i18n="perfil.c2title">Excelência técnica deveria ser vantagem competitiva — não desvantagem.</div>
+          <div class="perfil-card-body" data-i18n="perfil.c2body">Hoje, o médico mais dedicado à medicina perde mercado para quem se dedica mais ao Instagram. Isso é uma distorção estrutural. Existimos para inverter a equação: quem opera melhor deveria faturar mais. Não menos.</div>
         </div>
       </div>
       <div class="perfil-card">
         <div class="perfil-card-num">3</div>
         <div>
-          <div class="perfil-card-title" data-i18n="perfil.c3title">Disposição para uma parceria real</div>
-          <div class="perfil-card-body" data-i18n="perfil.c3body">Parceria significa transparência. Significa abrir os números, alinhar expectativas e crescer junto. Se você quer um fornecedor, não somos o parceiro certo.</div>
+          <div class="perfil-card-title" data-i18n="perfil.c3title">O paciente tem o direito de encontrar o médico certo.</div>
+          <div class="perfil-card-body" data-i18n="perfil.c3body">A saúde estética não é entretenimento. É uma decisão médica que marca corpo e identidade de alguém. Quando marketing agressivo captura o paciente antes da excelência clínica, o paciente sai perdendo. Nossa responsabilidade final é com ele.</div>
         </div>
       </div>
     </div>
     <div class="perfil-cta">
       <div class="perfil-cta-text" data-i18n="perfil.cta">Se você se reconhece nesse perfil — <em>candidate-se ao nosso ciclo de investimento.</em></div>
       <a href="#apply" class="btn-prim" data-i18n="nav.apply">Candidatura</a>
+    </div>
+    <div class="purpose-declaration">
+      <div class="purpose-divider"></div>
+      <p class="purpose-text" data-i18n="purpose.text">A Lumexa Capital existe para devolver o mercado aos médicos que operam com excelência — e retirá-lo dos <em>charlatães</em> que o sequestraram com marketing. <em>Todo o resto é consequência.</em></p>
     </div>
   </div>
 </section>
@@ -950,11 +963,12 @@ pt:{
 'tese.eyebrow':'Nossa tese','tese.title1':'Por que','tese.title2':'investimos.',
 'tese.statement':'Investimos na premissa de que o médico extraordinário está limitado pela gestão — não pelo talento. Nossa tese é simples: retire a operação do caminho e o crescimento é inevitável.',
 'perfil.eyebrow':'O perfil que buscamos','perfil.title1':'Médicos que','perfil.title2':'pertencem aqui.',
-'perfil.lead':'Não buscamos qualquer médico. Buscamos um perfil específico — e quando encontramos, investimos com convicção.',
-'perfil.c1title':'Excelência clínica reconhecida','perfil.c1body':'Você é referência na sua especialidade. Pacientes te procuram. Colegas te respeitam. Sua agenda cresceria naturalmente — se houvesse estrutura para absorver a demanda.',
-'perfil.c2title':'Ambição de escala, não de complexidade','perfil.c2body':'Você quer crescer — mas não quer se tornar gestor. Não quer contratar equipe, negociar contrato de aluguel ou entender funil de marketing. Você quer operar. Nós cuidamos do resto.',
-'perfil.c3title':'Disposição para uma parceria real','perfil.c3body':'Parceria significa transparência. Significa abrir os números, alinhar expectativas e crescer junto. Se você quer um fornecedor, não somos o parceiro certo.',
+'perfil.lead':'Buscamos o médico que o mercado não recompensa proporcionalmente ao seu nível. Os três princípios abaixo definem em quem acreditamos — e por que investimos.',
+'perfil.c1title':'O melhor médico não deveria precisar saber de marketing.','perfil.c1body':'Sua formação foi em medicina. Não deveria ter que aprender funil, CRM ou copy para que a excelência técnica chegasse aos pacientes certos. Excelência clínica deveria falar por si — e o papel da Lumexa é fazer com que ela fale.',
+'perfil.c2title':'Excelência técnica deveria ser vantagem competitiva — não desvantagem.','perfil.c2body':'Hoje, o médico mais dedicado à medicina perde mercado para quem se dedica mais ao Instagram. Isso é uma distorção estrutural. Existimos para inverter a equação: quem opera melhor deveria faturar mais. Não menos.',
+'perfil.c3title':'O paciente tem o direito de encontrar o médico certo.','perfil.c3body':'A saúde estética não é entretenimento. É uma decisão médica que marca corpo e identidade de alguém. Quando marketing agressivo captura o paciente antes da excelência clínica, o paciente sai perdendo. Nossa responsabilidade final é com ele.',
 'perfil.cta':'Se você se reconhece nesse perfil — candidate-se ao nosso ciclo de investimento.',
+'purpose.text':'A Lumexa Capital existe para devolver o mercado aos médicos que operam com excelência — e retirá-lo dos <em>charlatães</em> que o sequestraram com marketing. <em>Todo o resto é consequência.</em>',
 'aval.eyebrow':'Como avaliamos','aval.title':'O processo de','aval.lead':'Conduzimos cada candidatura com o mesmo rigor de um processo de investimento institucional. Cada etapa tem um propósito — e nem toda candidatura avança.',
 'aval.s1label':'Candidatura','aval.s1title':'Formulário de aplicação','aval.s1body':'Você preenche o formulário com perfil clínico, especialidade e contexto atual. Nenhum compromisso nessa etapa.',
 'aval.s2label':'Time de Investimento','aval.s2title':'Análise de perfil e potencial','aval.s2body':'Nossa equipe de investimentos analisa o perfil, o fit com nossa tese e o potencial de crescimento da operação. É aqui que a maioria das candidaturas é filtrada.',
@@ -964,11 +978,11 @@ pt:{
 'aval.who':'Quem avalia: Time de Investimento','aval.whoinv':'Quem avalia: Time de Investimento + Due Diligence','aval.whocom':'Quem delibera: Comitê de Investimento','aval.whopart':'Quem apresenta: Partner',
 'nav.thesis':'Nossa tese','nav.process':'Como avaliamos','nav.philosophy':'Filosofia','nav.approach':'Abordagem','nav.dd':'Due Diligence','nav.team':'Leadership','nav.careers':'Carreiras','nav.apply':'Candidatura','nav.investor':'Área do Investidor',
 'hero.eyebrow':'Lumexa Capital · São Paulo','hero.h1a':'O sócio que o médico','hero.h1b':'precisava','hero.h1c':'— mas não sabia que existia.',
-'hero.sub':'O sócio operacional do médico que quer crescer. A Lumexa Capital investe com capital, estrutura e execução — sem que você abra mão da medicina. Crescemos juntos: nosso resultado depende do seu.',
+'hero.sub':'O médico que opera melhor raramente é o que mais fatura. A Lumexa Capital existe para corrigir essa distorção — com capital, estrutura e execução que devolvem o mercado a quem merece.',
 'hero.cta1':'Nossa abordagem','hero.cta2':'Solicitar candidatura →',
 'stat.1':'em 90 dias · KCL Clinic','stat.2':'cirurgias fechadas/mês','stat.3':'médicos parceiros · meta 2030',
 'phil.eyebrow':'Filosofia','phil.title1':'Por que','phil.title2':'existimos.',
-'phil.p1title':'O problema','phil.p1body':'Médicos excepcionais perdem tempo, energia e clareza mental lidando com gestão, captação e operação. A clínica cresce devagar não por falta de talento médico — mas por falta de estrutura.',
+'phil.p1title':'O problema','phil.p1body':'O mercado de saúde estética não premia quem opera melhor. Premia quem aparece mais. Enquanto os melhores médicos operam sem estrutura, charlatães com bom marketing lotam agenda e capturam pacientes que não sabem diferenciar. O paciente paga a conta dessa distorção — e esse é o problema que a Lumexa Capital existe para resolver.',
 'phil.p2title':'O médico é o ativo','phil.p2body':'O médico é o ativo. A operação é nossa responsabilidade. Quando retiramos o peso da gestão do médico, ele faz o que faz de melhor — e a clínica cresce de forma estruturada e sustentável.',
 'phil.p3title':'O resultado','phil.p3body':'Nosso primeiro parceiro médico é a prova do modelo. Os números falam por si.',
 'result.label':'Case de Investimento','result.n':'em 90 dias.',
